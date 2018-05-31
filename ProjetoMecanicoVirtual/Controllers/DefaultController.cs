@@ -6,15 +6,10 @@ using System.Web.Mvc;
 
 namespace ProjetoMecanicoVirtual.Controllers
 {
-    public class UsuarioController : Controller
+    public class DefaultController : Controller
     {
-        // GET: Usuario
-        public ActionResult CadastroCliente()
-        {
-            return View();
-        }
-
-        public ActionResult GerenciarUser()
+        // GET: Default
+        public ActionResult Default()
         {
             return View();
         }

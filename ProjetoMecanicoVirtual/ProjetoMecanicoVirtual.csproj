@@ -140,8 +140,6 @@
     <Content Include="Views\CadastroUser.aspx" />
     <Content Include="Views\CadastroVeiculo.aspx" />
     <Content Include="Views\ConsultarInformacao.aspx" />
-    <Content Include="Views\Default.aspx" />
-    <Content Include="Views\GerenciarUser.aspx" />
     <Content Include="Views\InformarErro.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -150,6 +148,7 @@
     <Compile Include="Bean\Acesso.cs" />
     <Compile Include="Bean\Carro.cs" />
     <Compile Include="Bean\Usuario.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAO\AcessoDAO.cs" />
     <Compile Include="DAO\CarroDAO.cs" />
@@ -177,14 +176,6 @@
       <DependentUpon>ConsultarInformacao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\GerenciarUser.aspx.cs">
-      <DependentUpon>GerenciarUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Views\InformarErro.aspx.cs">
       <DependentUpon>InformarErro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -198,7 +189,9 @@
     <Content Include="assets\css\bootstrap.css.map" />
     <Content Include="assets\css\bootstrap.min.css.map" />
     <Content Include="assets\js\jquery-2.2.1.min.map" />
-    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\CadastroCliente.cshtml" />
+    <Content Include="Views\Default\Default.cshtml" />
+    <Content Include="Views\Usuario\GerenciarUser.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
