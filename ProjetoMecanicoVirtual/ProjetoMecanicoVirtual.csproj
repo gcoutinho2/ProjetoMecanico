@@ -88,19 +88,136 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\bootstrap-datepicker3.min.css" />
+    <Content Include="assets\css\bootstrap-social.css" />
+    <Content Include="assets\css\bootstrap-theme.css" />
+    <Content Include="assets\css\bootstrap-theme.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\dataTables.bootstrap.css" />
+    <Content Include="assets\css\dataTables.responsive.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\metisMenu.css" />
+    <Content Include="assets\css\metisMenu.min.css" />
+    <Content Include="assets\css\sb-admin-2.css" />
+    <Content Include="assets\css\table.css" />
+    <Content Include="assets\css\timeline.css" />
+    <Content Include="assets\js\bootstrap-datepicker.min.js" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\dataTables.bootstrap.min.js" />
+    <Content Include="assets\js\dataTables.min.js" />
+    <Content Include="assets\js\jquery-2.2.1.min.js" />
+    <Content Include="assets\js\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="assets\js\locales\dataTables.pt-BR.js" />
+    <Content Include="assets\js\login.js" />
+    <Content Include="assets\js\metisMenu.js" />
+    <Content Include="assets\js\metisMenu.min.js" />
+    <Content Include="assets\js\npm.js" />
+    <Content Include="assets\js\qr\alignpat.js" />
+    <Content Include="assets\js\qr\bitmat.js" />
+    <Content Include="assets\js\qr\bmparser.js" />
+    <Content Include="assets\js\qr\datablock.js" />
+    <Content Include="assets\js\qr\databr.js" />
+    <Content Include="assets\js\qr\datamask.js" />
+    <Content Include="assets\js\qr\decoder.js" />
+    <Content Include="assets\js\qr\detector.js" />
+    <Content Include="assets\js\qr\errorlevel.js" />
+    <Content Include="assets\js\qr\findpat.js" />
+    <Content Include="assets\js\qr\formatinf.js" />
+    <Content Include="assets\js\qr\gf256.js" />
+    <Content Include="assets\js\qr\gf256poly.js" />
+    <Content Include="assets\js\qr\grid.js" />
+    <Content Include="assets\js\qr\qrcode.js" />
+    <Content Include="assets\js\qr\rsdecoder.js" />
+    <Content Include="assets\js\qr\test.html" />
+    <Content Include="assets\js\qr\version.js" />
+    <Content Include="assets\js\sb-admin-2.js" />
+    <Content Include="assets\js\utils.js" />
     <Content Include="Global.asax" />
+    <Content Include="Views\CadastroCliente.aspx" />
+    <Content Include="Views\CadastroUser.aspx" />
+    <Content Include="Views\CadastroVeiculo.aspx" />
+    <Content Include="Views\ConsultarInformacao.aspx" />
+    <Content Include="Views\Default.aspx" />
+    <Content Include="Views\GerenciarUser.aspx" />
+    <Content Include="Views\InformarErro.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Bean\Acesso.cs" />
+    <Compile Include="Bean\Carro.cs" />
+    <Compile Include="Bean\Usuario.cs" />
+    <Compile Include="DAO\AcessoDAO.cs" />
+    <Compile Include="DAO\CarroDAO.cs" />
+    <Compile Include="DAO\Conexao.cs" />
+    <Compile Include="DAO\RevisaoDAO.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Revisoes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\CadastroCliente.aspx.cs">
+      <DependentUpon>CadastroCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CadastroCliente.aspx.designer.cs">
+      <DependentUpon>CadastroCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CadastroUser.aspx.cs">
+      <DependentUpon>CadastroUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CadastroUser.aspx.designer.cs">
+      <DependentUpon>CadastroUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CadastroVeiculo.aspx.cs">
+      <DependentUpon>CadastroVeiculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CadastroVeiculo.aspx.designer.cs">
+      <DependentUpon>CadastroVeiculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConsultarInformacao.aspx.cs">
+      <DependentUpon>ConsultarInformacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ConsultarInformacao.aspx.designer.cs">
+      <DependentUpon>ConsultarInformacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GerenciarUser.aspx.cs">
+      <DependentUpon>GerenciarUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\GerenciarUser.aspx.designer.cs">
+      <DependentUpon>GerenciarUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InformarErro.aspx.cs">
+      <DependentUpon>InformarErro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\InformarErro.aspx.designer.cs">
+      <DependentUpon>InformarErro.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="assets\css\bootstrap-theme.css.map" />
+    <Content Include="assets\css\bootstrap-theme.min.css.map" />
+    <Content Include="assets\css\bootstrap.css.map" />
+    <Content Include="assets\css\bootstrap.min.css.map" />
+    <Content Include="assets\js\jquery-2.2.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,7 +228,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
