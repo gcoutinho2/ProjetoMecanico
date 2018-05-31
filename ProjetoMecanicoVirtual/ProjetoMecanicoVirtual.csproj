@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -138,11 +139,8 @@
     <Content Include="Global.asax" />
     <Content Include="Views\CadastroCliente.aspx" />
     <Content Include="Views\CadastroUser.aspx" />
-    <Content Include="Views\CadastroVeiculo.aspx" />
-    <Content Include="Views\ConsultarInformacao.aspx" />
     <Content Include="Views\Default.aspx" />
     <Content Include="Views\GerenciarUser.aspx" />
-    <Content Include="Views\InformarErro.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +148,8 @@
     <Compile Include="Bean\Acesso.cs" />
     <Compile Include="Bean\Carro.cs" />
     <Compile Include="Bean\Usuario.cs" />
+    <Compile Include="Controllers\MensagemController.cs" />
+    <Compile Include="Controllers\VeiculoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAO\AcessoDAO.cs" />
     <Compile Include="DAO\CarroDAO.cs" />
@@ -169,24 +169,12 @@
       <DependentUpon>CadastroUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\CadastroVeiculo.aspx.cs">
-      <DependentUpon>CadastroVeiculo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\ConsultarInformacao.aspx.cs">
-      <DependentUpon>ConsultarInformacao.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Views\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\GerenciarUser.aspx.cs">
       <DependentUpon>GerenciarUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\InformarErro.aspx.cs">
-      <DependentUpon>InformarErro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
@@ -199,6 +187,9 @@
     <Content Include="assets\css\bootstrap.min.css.map" />
     <Content Include="assets\js\jquery-2.2.1.min.map" />
     <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Veiculo\CadastroVeiculo.cshtml" />
+    <Content Include="Views\Veiculo\ConsultarInformacao.cshtml" />
+    <Content Include="Views\Mensagem\Mensagem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
