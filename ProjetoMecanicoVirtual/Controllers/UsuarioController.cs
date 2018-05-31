@@ -1,35 +1,17 @@
-﻿using System.Web.Http;
-using ProjetoAdmin.Models;
-using ProjetoAdmin.DAO;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
 
-namespace ProjetoAdmin.Controllers
+namespace ProjetoMecanicoVirtual.Controllers
 {
-    public class UsuarioController : ApiController
+    public class UsuarioController : Controller
     {
-        UsuarioDAO user = new UsuarioDAO();
-
-        [HttpPost]
-        public void CadastrarUsuario([FromBody]Usuario usuario)
-        {            
-            user.InserirUsuario(usuario);
-        }
-
-        [HttpPost]
-        public void EditarUsuario([FromBody]Usuario usuario)
+        // GET: Usuario
+        public ActionResult Index()
         {
-            user.EditarUsuario(usuario);
-        }
-
-        [HttpGet]
-        public void ObterId([FromBody] int id)
-        {
-            user.ObterId(id);
-        }
-
-        [HttpGet]
-        public void Excluir(int id)
-        {
-            user.Excluir(id);
+            return View();
         }
     }
 }

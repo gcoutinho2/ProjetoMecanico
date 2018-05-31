@@ -150,6 +150,7 @@
     <Compile Include="Bean\Acesso.cs" />
     <Compile Include="Bean\Carro.cs" />
     <Compile Include="Bean\Usuario.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAO\AcessoDAO.cs" />
     <Compile Include="DAO\CarroDAO.cs" />
     <Compile Include="DAO\Conexao.cs" />
@@ -164,50 +165,29 @@
       <DependentUpon>CadastroCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\CadastroCliente.aspx.designer.cs">
-      <DependentUpon>CadastroCliente.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\CadastroUser.aspx.cs">
       <DependentUpon>CadastroUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\CadastroUser.aspx.designer.cs">
-      <DependentUpon>CadastroUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\CadastroVeiculo.aspx.cs">
       <DependentUpon>CadastroVeiculo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\CadastroVeiculo.aspx.designer.cs">
-      <DependentUpon>CadastroVeiculo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\ConsultarInformacao.aspx.cs">
       <DependentUpon>ConsultarInformacao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\ConsultarInformacao.aspx.designer.cs">
-      <DependentUpon>ConsultarInformacao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\GerenciarUser.aspx.cs">
       <DependentUpon>GerenciarUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\GerenciarUser.aspx.designer.cs">
-      <DependentUpon>GerenciarUser.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\InformarErro.aspx.cs">
       <DependentUpon>InformarErro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\InformarErro.aspx.designer.cs">
-      <DependentUpon>InformarErro.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +198,7 @@
     <Content Include="assets\css\bootstrap.css.map" />
     <Content Include="assets\css\bootstrap.min.css.map" />
     <Content Include="assets\js\jquery-2.2.1.min.map" />
+    <Content Include="Views\Usuario\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -227,7 +208,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
