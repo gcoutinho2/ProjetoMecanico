@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjetoAdmin.DAO;
+using ProjetoAdmin.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,6 +24,18 @@ namespace ProjetoMecanicoVirtual.Controllers
         public ActionResult GerenciarUser()
         {
             return View();
+        }
+
+        public ActionResult ConfirmarCadastro(Usuario user)
+        {
+
+            UsuarioDAO userDao = new UsuarioDAO();
+
+
+            userDao.InserirUsuario(user);
+
+            return Json(true);
+
         }
     }
 }
