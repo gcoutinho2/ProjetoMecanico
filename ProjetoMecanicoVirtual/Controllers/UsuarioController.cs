@@ -9,7 +9,12 @@ namespace ProjetoMecanicoVirtual.Controllers
     public class UsuarioController : Controller
     {
         // GET: Usuario
-        public ActionResult Index()
+        public ActionResult PosCadastro()
+        {
+            return View();
+        }
+
+        public ActionResult CadastroUser()
         {
             return View();
         }
