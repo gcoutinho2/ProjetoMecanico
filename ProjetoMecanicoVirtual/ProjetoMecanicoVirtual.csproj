@@ -137,10 +137,12 @@
     <Content Include="assets\js\sb-admin-2.js" />
     <Content Include="assets\js\utils.js" />
     <Content Include="Global.asax" />
-    <Content Include="Views\CadastroCliente.aspx" />
     <Content Include="Views\CadastroUser.aspx" />
     <Content Include="Views\Default.aspx" />
     <Content Include="Views\GerenciarUser.aspx" />
+    <Content Include="Views\CadastroVeiculo.aspx" />
+    <Content Include="Views\ConsultarInformacao.aspx" />
+    <Content Include="Views\InformarErro.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +150,7 @@
     <Compile Include="Bean\Acesso.cs" />
     <Compile Include="Bean\Carro.cs" />
     <Compile Include="Bean\Usuario.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\MensagemController.cs" />
     <Compile Include="Controllers\VeiculoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -161,20 +164,20 @@
     </Compile>
     <Compile Include="Models\Revisoes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\CadastroCliente.aspx.cs">
-      <DependentUpon>CadastroCliente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Views\CadastroUser.aspx.cs">
       <DependentUpon>CadastroUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Views\CadastroVeiculo.aspx.cs">
+      <DependentUpon>CadastroVeiculo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\GerenciarUser.aspx.cs">
-      <DependentUpon>GerenciarUser.aspx</DependentUpon>
+    <Compile Include="Views\ConsultarInformacao.aspx.cs">
+      <DependentUpon>ConsultarInformacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\InformarErro.aspx.cs">
+      <DependentUpon>InformarErro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
@@ -186,7 +189,9 @@
     <Content Include="assets\css\bootstrap.css.map" />
     <Content Include="assets\css\bootstrap.min.css.map" />
     <Content Include="assets\js\jquery-2.2.1.min.map" />
-    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\PosCadastro.cshtml" />
+    <Content Include="Views\Default\Default.cshtml" />
+    <Content Include="Views\Usuario\GerenciarUser.cshtml" />
     <Content Include="Views\Veiculo\CadastroVeiculo.cshtml" />
     <Content Include="Views\Veiculo\ConsultarInformacao.cshtml" />
     <Content Include="Views\Mensagem\Mensagem.cshtml" />

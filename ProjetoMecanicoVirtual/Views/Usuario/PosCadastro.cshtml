@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroCliente.aspx.cs" Inherits="ProjetoAdmin.CadastroCliente" %>
-
-<%@ Register Src="~/NavBar.ascx" TagPrefix="uc1" TagName="NavBar" %>
+﻿@{
+    Layout = null;
+}
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,14 +12,14 @@
 
     <title>Dados do Cliente</title>
 
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-social.css" />
-    <link rel="stylesheet" type="text/css" href="/css/metisMenu.min.css" />
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker3.min.css" />
-    <link rel="stylesheet" type="text/css" href="/css/dataTables.bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="/css/dataTables.responsive.css" />
-    <link rel="stylesheet" type="text/css" href="/css/sb-admin-2.css" />
-    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap-social.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/metisMenu.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/dataTables.bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/dataTables.responsive.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/sb-admin-2.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/font-awesome.min.css" />
 
     <style type="text/css">
         /* Seus estilos aqui! :) */
@@ -48,12 +48,11 @@
 
                                 <div class="row">
                                     <div class="col-xs-12 form-group">
-                                        Parabéns! Você já criou o seu pré cadastro, vamos atualizar mais alguns dados 
+                                        Parabéns! Você já criou o seu pré cadastro, vamos atualizar mais alguns dados
                                     </div>
                                 </div>
 
                                 <!-- Criando cada tabelinha -->
-
                                 <!-- Nome, sobrenome-->
                                 <div class="row">
                                     <div class="form-group col-xs-6">
@@ -85,7 +84,7 @@
                                 </div>
 
 
-                                <label class="fieldsetTitle"><strong>Endereço residencial</strong></label> 
+                                <label class="fieldsetTitle"><strong>Endereço residencial</strong></label>
 
                                 <!-- CEP -->
                                 <div class="row">
@@ -95,7 +94,7 @@
                                         <input name="CepValido" type="text" id="cepValido" class="form-control">
                                         Não sabe o CEP? <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank" class="aConsultaCEP">Pesquisar</a>
                                     </div>
-                               </div>
+                                </div>
 
                                 <!-- ENDEREÇO E NÚMERO -->
                                 <div class="row">
@@ -105,19 +104,19 @@
                                         <input name="TextoEndereco" type="text" id="TextoEndereco" class="form-control">
                                     </div>
                                     <div class="row">
-                                    <div class="from-group col-xs-3">
-                                        <label class="text-base" for="Numero">Número</label>
-                                        <label class="text-base" id="NumeroInvalido" style="display: none;">O campo Número é obrigatório</label>
-                                        <input name="NumeroEndResidencial" type="text" id="NumeroEndResidencial" class="form-control">
+                                        <div class="from-group col-xs-3">
+                                            <label class="text-base" for="Numero">Número</label>
+                                            <label class="text-base" id="NumeroInvalido" style="display: none;">O campo Número é obrigatório</label>
+                                            <input name="NumeroEndResidencial" type="text" id="NumeroEndResidencial" class="form-control">
+                                        </div>
                                     </div>
-                               </div>
 
-                                <!-- COMPLEMENTO -->
+                                    <!-- COMPLEMENTO -->
                                     <div class="from-group col-xs-6">
                                         <label class="text-base" for="Complemento">Complemento</label>
                                         <input name="TextoComplemento" type="text" id="TextoComplemento" class="form-control" />
                                     </div>
-                               </div>
+                                </div>
 
                                 <!-- CIDADE -->
                                 <div class="row">
@@ -130,7 +129,7 @@
                                         <label class="text-base" for="Cidade">Cidade</label>
                                         <label class="text-base" style="display: none;">Os campos Cidade</label>
                                         <input name="TextoCidadeResidencial" type="text" id="TextoCidadeResidencial" class="form-control">
-                                        
+
                                     </div>
                                 </div>
 
@@ -139,37 +138,37 @@
                                     <div class="form-group col-xs-6">
                                         <label class="text-base" for="Estado">Estado</label>
                                         <select name="ctl00$ContentPlaceHolder1$selEstadoResidencial" id="ctl00_ContentPlaceHolder1_selEstadoResidencial" class="form-control">
-	                                        <option value=""></option>
-	                                        <option value="AC">AC</option>
-	                                        <option value="AL">AL</option>
-	                                        <option value="AM">AM</option>
-	                                        <option value="AP">AP</option>
-	                                        <option value="BA">BA</option>
-	                                        <option value="CE">CE</option>
-	                                        <option value="DF">DF</option>
-	                                        <option value="ES">ES</option>
-	                                        <option value="GO">GO</option>
-	                                        <option value="MA">MA</option>
-	                                        <option value="MG">MG</option>
-	                                        <option value="MS">MS</option>
-	                                        <option value="MT">MT</option>
-	                                        <option value="PA">PA</option>
-	                                        <option value="PB">PB</option>
-	                                        <option value="PE">PE</option>
-	                                        <option value="PI">PI</option>
-	                                        <option value="PR">PR</option>
-	                                        <option value="RJ">RJ</option>
-	                                        <option value="RN">RN</option>
-	                                        <option value="RO">RO</option>
-	                                        <option value="RR">RR</option>
-	                                        <option value="RS">RS</option>
-	                                        <option value="SC">SC</option>  
-	                                        <option value="SE">SE</option>
-	                                        <option value="SP">SP</option>
-	                                        <option value="TO">TO</option>
+                                            <option value=""></option>
+                                            <option value="AC">AC</option>
+                                            <option value="AL">AL</option>
+                                            <option value="AM">AM</option>
+                                            <option value="AP">AP</option>
+                                            <option value="BA">BA</option>
+                                            <option value="CE">CE</option>
+                                            <option value="DF">DF</option>
+                                            <option value="ES">ES</option>
+                                            <option value="GO">GO</option>
+                                            <option value="MA">MA</option>
+                                            <option value="MG">MG</option>
+                                            <option value="MS">MS</option>
+                                            <option value="MT">MT</option>
+                                            <option value="PA">PA</option>
+                                            <option value="PB">PB</option>
+                                            <option value="PE">PE</option>
+                                            <option value="PI">PI</option>
+                                            <option value="PR">PR</option>
+                                            <option value="RJ">RJ</option>
+                                            <option value="RN">RN</option>
+                                            <option value="RO">RO</option>
+                                            <option value="RR">RR</option>
+                                            <option value="RS">RS</option>
+                                            <option value="SC">SC</option>
+                                            <option value="SE">SE</option>
+                                            <option value="SP">SP</option>
+                                            <option value="TO">TO</option>
                                         </select>
                                     </div>
-                                     <div class="form-group col-xs-6">
+                                    <div class="form-group col-xs-6">
                                         <label class="text-base" for="Country">País/região</label>
                                         <select id="Country" class="form-control" name="Country">
                                             <option value="AF">Afeganistão</option>
@@ -433,7 +432,7 @@
 
                                 <!--País/Região-->
                                 <div class="row">
-                                   
+
                                 </div>
 
                                 <!--Data nascimento-->
@@ -660,13 +659,13 @@
 
                                 <!-- Finalizando Cadastro -->
                                 <br />
-                               <!-- <button type="submit" class="btn btn-default bt-edit">Salvar Alterações</button> -->
+                                <!-- <button type="submit" class="btn btn-default bt-edit">Salvar Alterações</button> -->
                                 <button type="button" class="btn btn-default bt-edit" data-toggle="modal" data-target="#myModal">Salvar Alterações</button>
-                                    <!-- Final código das tabelas -->
+                                <!-- Final código das tabelas -->
 
-                                </div>
-        </div>
-        </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Modal para dados enviados -->
                     <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog">
@@ -689,21 +688,21 @@
                         </div>
                     </div>
 
-                    </div>
                 </div>
-
-                <script type="text/javascript" charset="utf-8" src="/js/jquery-2.2.1.min.js"></script>
-                <script type="text/javascript" charset="utf-8" src="/js/bootstrap.min.js"></script>
-                <script type="text/javascript" charset="utf-8" src="/js/metisMenu.min.js"></script>
-                <script type="text/javascript" charset="utf-8" src="/js/bootstrap-datepicker.min.js"></script>
-                <script type="text/javascript" charset="utf-8" src="/js/locales/bootstrap-datepicker.pt-BR.min.js"></script>
-                <script type="text/javascript" charset="utf-8" src="/js/dataTables.min.js"></script>
-                <script type="text/javascript" charset="utf-8" src="/js/dataTables.bootstrap.min.js"></script>
-                <script type="text/javascript" charset="utf-8" src="/js/locales/dataTables.pt-BR.js"></script>
-                <script type="text/javascript" charset="utf-8" src="/js/sb-admin-2.js"></script>
-                <script type="text/javascript" charset="utf-8" src="/js/utils.js"></script>
-
             </div>
+
+            <script type="text/javascript" charset="utf-8" src="~/assets/js/jquery-2.2.1.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="~/assets/js/bootstrap.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="~/assets/js/metisMenu.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="~/assets/js/bootstrap-datepicker.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="~/assets/js/locales/bootstrap-datepicker.pt-BR.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="~/assets/js/dataTables.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="~/assets/js/dataTables.bootstrap.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="~/assets/js/locales/dataTables.pt-BR.js"></script>
+            <script type="text/javascript" charset="utf-8" src="~/assets/js/sb-admin-2.js"></script>
+            <script type="text/javascript" charset="utf-8" src="~/assets/js/utils.js"></script>
+
+        </div>
     </form>
 </body>
 </html>
