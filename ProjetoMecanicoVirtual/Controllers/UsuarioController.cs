@@ -18,5 +18,10 @@ namespace ProjetoMecanicoVirtual.Controllers
         {
             return View();
         }
+
+        public ActionResult GerenciarUser()
+        {
+            return View();
+        }
     }
 }
