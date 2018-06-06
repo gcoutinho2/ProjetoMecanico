@@ -45,7 +45,7 @@
         <!-- Botão enviar-->
         <div class="form-row">
             <div class="form-group col-md-12">
-                <button type="button" id="cadUser" class="btn btn-default bt-edit" data-toggle="modal" data-target="#myModal">Criar Usuário</button>
+                <button type="button" id="cadUser" onclick="CriarUsuario();" >Criar Usuário</button>
             </div>
         </div>
 
@@ -75,9 +75,38 @@
             </div>
         </div>
     </div>
+<script type="text/javascript" src="~/assets/js/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript">
 
+
+        function CadastrarUsuario() {
+
+            var usuario = {
+                Nome: $("#inputUser").val(),
+                Email: $("#inputEmailUser").val(),
+                Senha: $("#inputSenha").val(),
+
+            };
+
+            $.ajax({
+                url: "@Url.Action("","")",
+                cache: false,
+                method: "post",
+                datatype: "json",
+                data: usuario,
+                success: function (dados) {
+
+                },
+                error: function () {
+
+                }
+
+            });
+
+        }
+</script>
 
 
 
 }
-

@@ -26,16 +26,29 @@ namespace ProjetoMecanicoVirtual.Controllers
             return View();
         }
 
-        public ActionResult ConfirmarCadastro(Usuario user)
+        
+
+        public ActionResult CadastroPosCadastro(Usuario user)
+        {
+            UsuarioDAO userDao = new UsuarioDAO();
+            userDao.InserirUsuario(user);
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+        public ActionResult TestandoUpdate(Usuario usuario)
         {
 
-            UsuarioDAO userDao = new UsuarioDAO();
 
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
 
-            userDao.InserirUsuario(user);
-
+        public ActionResult InsereUsuario(Usuario usuario)
+        {
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            usuarioDAO.InserirUsuario(usuario);
             return Json(true);
-
         }
     }
 }
