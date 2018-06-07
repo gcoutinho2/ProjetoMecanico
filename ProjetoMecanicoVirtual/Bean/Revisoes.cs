@@ -7,33 +7,33 @@ namespace ProjetoAdmin.Models
 {
     public class Revisoes
     {
-        public int Filtro_oleo { get; set; }
+        public int FiltroOleo { get; set; }
         
-        public int Pastilha_freio { get; set; }
+        public int PastilhaFreio { get; set; }
 
         public int Velas { get; set; }
 
-        public int Filtro_combustivel { get; set; }
+        public int FiltroCombustivel { get; set; }
 
         public DateTime Data { get; set; }
 
-        public int Correia_dentada { get; set; }
+        public int CorreiaDentada { get; set; }
 
-        public int Filtro_ar_condicionado { get; set; }
+        public int FiltroArCondicionado { get; set; }
 
-        public int Correia_alternador { get; set; }
+        public int CorreiaAlternador { get; set; }
 
-        public int Filtro_ar { get; set; }
+        public int FiltroAr { get; set; }
 
         public int Amortecedor { get; set; }
 
         public int Pneu { get; set; }
 
-        public int Fluido_transmissao { get; set; }
+        public int FluidoTransmissao { get; set; }
 
-        public int Disco_freio { get; set; }
+        public int DiscoFreio { get; set; }
 
-        public int Fluido_direcao { get; set; }
+        public int FluidoDirecao { get; set; }
 
         public int Alinhamento { get; set; }
 

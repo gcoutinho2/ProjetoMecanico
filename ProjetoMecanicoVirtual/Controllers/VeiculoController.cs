@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjetoAdmin.DAO;
+using ProjetoAdmin.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,8 +17,14 @@ namespace ProjetoMecanicoVirtual.Controllers
             return View();
         }
 
-        public ActionResult CadastroVeiculo()
+        public ActionResult CadastroVeiculo(Carro carro, Revisoes revisoes)
         {
+            CarroDAO carroDAO = new CarroDAO();
+            RevisaoDAO revisaoDAO = new RevisaoDAO();
+
+            carroDAO.InserirCarro(carro);
+            revisaoDAO.CadastrarRevisao(revisoes);
+
             return View();
         }
     }
