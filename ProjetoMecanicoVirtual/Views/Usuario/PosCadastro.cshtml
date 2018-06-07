@@ -63,8 +63,6 @@
                 <div class="form-group col-md-2">
                     <label for="inputCep">CEP</label>
                     <input type="text" class="form-control" id="inputCep">
-                    <label name="inputCep" id="cepInvalido" class="feedback" style="display: none;">O CEP é inválido</label>
-                    <!-- <input name="CepValido" type="text" id="cepValido" class="form-control"> -->
                     Não sabe o CEP? <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank" class="aConsultaCEP">Pesquisar</a>
                 </div>
                 <div class="form-group col-md-6">
@@ -139,7 +137,6 @@
             </div>
         </form>
         <!-- Finalizando Cadastro -->
-
         <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
         <div style="height: 100px;"></div>
     </div>
@@ -164,28 +161,62 @@
             </div>
         </div>
     </div>
-<script type="text/javascript" src="~/assets/js/jquery-2.2.1.min.js"></script>
-<script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
-<script type="text/javascript">
+    <script type="text/javascript" src="~/assets/js/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
 
-    function ConfirmarCadastro(){
-            var pessoa = {
-                Nome: $("#inputNome").val(),
-                Sobrenome: $("#inputSobrenome").val(),
-                Rg: $("#inputRg").val(),
-                Cpf: $("#inputCpf").val(),
-                DtaNascimento: $("#inputData").val(),
-                Sexo: $("#Gender").val(),
-                NumTelefone: $("#inputTelCel").val(),
-                EmailAlternativo: $("#inputEmailAlt").val()
-        };
-        
+        function ConfirmarCadastro() {
+
+            debugger;
+            var cadastro = {
+                    usuario:{
+                    Nome: $("#inputNome").val(),
+                    Sobrenome: $("#inputSobrenome").val(),
+                    Rg: $("#inputRg").val(),
+                    DtaNascimento: $("#inputData").val(),
+                    Sexo: $("#Gender").val(),
+                    EmailAlternativo: $("#inputEmailAlt").val()
+                },
+
+                end: {
+                    Rua: $("#inputEnd").val(),
+                    Numero: $("#inputNum").val(),
+                    Bairro: $("#inputBairro").val(),
+                    Cep: $("#inputCep").val(),
+                    Cidade: $("#inputCity").val(),
+                    Estado: $("#inputState").val(),
+                    Pais: $("#inputPais").val()
+                },
+            }
+
+
+        //    var pessoa = {
+        //        Nome: $("#inputNome").val(),
+        //        Sobrenome: $("#inputSobrenome").val(),
+        //        Rg: $("#inputRg").val(),
+        //        DtaNascimento: $("#inputData").val(),
+        //        Sexo: $("#Gender").val(),
+        //        EmailAlternativo: $("#inputEmailAlt").val()
+        //};
+
+
+        //    var endereco = {
+        //        Rua: $("#inputEnd").val(),
+        //        Numero: $("#inputNum").val() ,
+        //        Bairro: $("#inputBairro").val(),
+        //        Cep: $("#inputCep").val(),
+        //        Cidade: $("#inputCity").val(),
+        //        Estado: $("#inputState").val(),
+        //        Pais: $("#inputPais").val()
+        //    };
+
+
             $.ajax({
                 url: "@Url.Action("TestandoUpdate", "Usuario")",
                 cache: false,
                 method: "post",
                 datatype: "json",
-                data: pessoa,
+                data: cadastro,
                 success: function (dados) {
 
                     alert("Sucesso");
@@ -196,10 +227,7 @@
             });
         }
 
-</script>  
+    </script>
 
 
 }
-
-
-

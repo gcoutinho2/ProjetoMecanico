@@ -26,6 +26,30 @@ namespace ProjetoAdmin.DAO
             }
         }
 
+
+        public void AlteraUsuario(Usuario usuario)
+        {
+            using (SqlConnection conn = Conexao.AbrirConexao())
+            {
+                using (SqlCommand cmd = new SqlCommand(@"Update Usuario  set nome = @nome, Sobrenome = @sobrenome,
+                                                       rg= @rg, data_nasc = @data_nasc , email_alternativo = @email_alternativo,
+                                                        sexo = @sexo where id = @id " , conn))
+                {
+                    
+                    cmd.Parameters.AddWithValue("@nome", usuario.Nome);
+                    cmd.Parameters.AddWithValue("@sobrenome", usuario.Sobrenome);
+                    cmd.Parameters.AddWithValue("@rg", usuario.Rg);
+                    cmd.Parameters.AddWithValue("@data_nasc", usuario.DtaNascimento);
+                    cmd.Parameters.AddWithValue("@email_alternativo", usuario.EmailAlternativo);
+                    cmd.Parameters.AddWithValue("@sexo", usuario.Sexo);
+
+                    cmd.Parameters.AddWithValue("@id", usuario.Id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
         public void EditarUsuario(Usuario usuario)
         {
             using (SqlConnection conn = Conexao.AbrirConexao())

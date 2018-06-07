@@ -178,6 +178,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Bean\Acesso.cs" />
     <Compile Include="Bean\Carro.cs" />
+    <Compile Include="Bean\Endereco.cs" />
     <Compile Include="Bean\Usuario.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\MensagemController.cs" />
@@ -186,12 +187,13 @@
     <Compile Include="DAO\AcessoDAO.cs" />
     <Compile Include="DAO\CarroDAO.cs" />
     <Compile Include="DAO\Conexao.cs" />
+    <Compile Include="DAO\EnderecoDAO.cs" />
     <Compile Include="DAO\RevisaoDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Revisoes.cs" />
+    <Compile Include="Bean\Revisoes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -261,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
