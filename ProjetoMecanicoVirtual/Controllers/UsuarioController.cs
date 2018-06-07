@@ -1,5 +1,7 @@
 ﻿using ProjetoAdmin.DAO;
 using ProjetoAdmin.Models;
+using ProjetoMecanicoVirtual.Bean;
+using ProjetoMecanicoVirtual.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,9 +39,14 @@ namespace ProjetoMecanicoVirtual.Controllers
 
 
 
-        public ActionResult TestandoUpdate(Usuario usuario)
+        public ActionResult TestandoUpdate(Usuario usuario, Endereco end)
         {
 
+            UsuarioDAO userDAO = new UsuarioDAO();
+            EnderecoDAO endDAO = new EnderecoDAO();
+            
+            userDAO.AlteraUsuario(usuario);
+            endDAO.InsereEndereco(end);
 
             return Json(true, JsonRequestBehavior.AllowGet);
         }
