@@ -15,19 +15,35 @@
             </li>
             <li class="breadcrumb-item active">Navbar</li>
         </ol>
-        <h1>Cadastro Usuário</h1>
+        <h1>Cadastro Funcionário</h1>
         <hr>
         <p>Digite os dados abaixo</p>
 
         <form>
             <div class="form-row">
                 <div class="form-group col-md-6">
+                    <label for="inputNome">Nome Funcionário</label>
+                    <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="inputEmailUser">Email</label>
+                    <input type="email" class="form-control" id="inputEmailUser" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
                     <label for="inputUser">Usuário</label>
                     <input type="text" class="form-control" id="inputUser" placeholder="Usuário">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputEmailUser">Email</label>
-                    <input type="email" class="form-control" id="inputEmailUser" placeholder="Email">
+                    <label class="text-base" for="tipoAcesso">Tipo de Acesso</label>
+                    <select id="tipoAcesso" class="form-control" name="tipoAcesso" data-bind="value: tipoAcesso, hasFocus: tipoAcesso.focused, css: { 'has-error': showError(tipoAcesso) }">
+                        <option selected="selected" value="">Selecione...</option>
+                        <option value="a">Administrador</option>
+                        <option value="p">Padrão</option>
+                        <option value="c">Contribuidor</option>
+                    </select>
                 </div>
             </div>
             <div class="form-row">
@@ -45,11 +61,11 @@
         <!-- Botão enviar-->
         <div class="form-row">
             <div class="form-group col-md-12">
-                <button type="button" id="cadUser" onclick="CriarUsuario();" >Criar Usuário</button>
+                <button type="button" id="cadUser" onclick="CriarUsuario();">Criar Usuário</button>
             </div>
         </div>
 
-        
+
         <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
         <div style="height: 100px;"></div>
     </div>
@@ -75,9 +91,9 @@
             </div>
         </div>
     </div>
-<script type="text/javascript" src="~/assets/js/jquery-2.2.1.min.js"></script>
-<script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
-<script type="text/javascript">
+    <script type="text/javascript" src="~/assets/js/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
 
 
         function CadastrarUsuario() {
@@ -103,7 +119,7 @@
             });
 
         }
-</script>
+    </script>
 
 
 
