@@ -65,7 +65,7 @@
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="arComb">
-                                <input type="checkbox" id="arComb" value="" /> Filtro de Combustível
+                                <input type="checkbox" id="filComb" value="" /> Filtro de Combustível
                             </label>
                         </div>
 
@@ -149,22 +149,22 @@
                         </div>
                     </div>
                 </div>
-             
+
             </div>
 
             <!-- Botão enviar-->
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <button type="button" id="cadVeiculo" class="btn btn-default bt-edit" data-toggle="modal" data-target="#myModal">Cadastrar</button>
+                    <button type="button" id="cadVeiculo" class="btn btn-default bt-edit" data-toggle="modal" data-target="#myModal" onclink="ConfirmarCadastro()">Cadastrar</button>
                 </div>
             </div>
 
         </form>
 
 
-            <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
-            <div style="height: 100px;"></div>
-</div>
+        <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
+        <div style="height: 100px;"></div>
+    </div>
 
     <!-- Modal para dados enviados -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -187,6 +187,56 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript" src="~/assets/js/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+    function ConfirmarCadastro(){
+        var cadastro = {
+            carro : {
+                Marca: $("#Marca").val(),
+                Modelo: $("#Modelo").val(),
+                Cor: $("#inputCor").val(),
+                Ano: $("#inputAno").val(),
+                Km: $("#inputKm").val()
+            },
+            revisoes : {
+                Data: $("#inputDataRevisao").val(),
+                FiltroAr: $("#ar").val(),
+                FiltroDeCombustivel: $("#filComb").val(),
+                FiltroArCondicionado: $("#arCond").val(),
+                FiltroDeOleo: $("#oleo").val(),
+                Velas: $("#velas").val(),
+                Luzes: $("#luzes").val(),
+                Freios: $("#freios").val(),
+                Amortecedor: $("#amortecedor").val(),
+                Pneus: $("#pneus").val(),
+                CorreiaDentada: $("#correiaDentada").val(),
+                CorreiaAlternador: $("#motor").val(),
+                Alinhamento: $("#alinhamento").val(),
+                FluidoDaDireção: $("#fluidoDIre").val(),
+                FluidoDoOleo: $("#fluidoOleo").val()
+            }
+        }
+
+        $.ajax({
+            url: "@Url.Action("CadastroVeiculo", "Veiculo")",
+            cache: false,
+            method: "post",
+            datatype: "json",
+            data: cadastro,
+            success: function (dados) {
+
+                alert("Sucesso");
+            },
+            error: function () {
+                alert("Houve um herro ao salvas os cadastros");
+            }
+        });
+    }
+
+</script>
 }
 
 

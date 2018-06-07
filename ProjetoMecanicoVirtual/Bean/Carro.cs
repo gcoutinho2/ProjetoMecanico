@@ -12,6 +12,6 @@ namespace ProjetoAdmin.Models
         public int Ano { get; set; }
         public double Km { get; set; }
         public string Cor { get; set; }
-        public string Montadora { get; set; }
+        public string Montadora { get; set; }        
     }
 }

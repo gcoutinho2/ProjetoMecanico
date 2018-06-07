@@ -22,20 +22,20 @@ namespace ProjetoAdmin.DAO
                             @filtro_ar_condicionado,@correia_alternador,@filtro_ar, @amortecedor, @pneu, 
                             @fluido_transmissao, @disco_freio, @fluido_direcao,@alinhamento", conn))
                 {
-                    cmd.Parameters.AddWithValue("@filtro_oleo", revisoes.Filtro_oleo);
-                    cmd.Parameters.AddWithValue("@pastila_freio",revisoes.Pastilha_freio);
+                    cmd.Parameters.AddWithValue("@filtro_oleo", revisoes.FiltroOleo);
+                    cmd.Parameters.AddWithValue("@pastila_freio",revisoes.PastilhaFreio);
                     cmd.Parameters.AddWithValue("@velas", revisoes.Velas);
-                    cmd.Parameters.AddWithValue("@filtro_combustivel", revisoes.Filtro_combustivel);
+                    cmd.Parameters.AddWithValue("@filtro_combustivel", revisoes.FiltroCombustivel);
                     cmd.Parameters.AddWithValue("@data", revisoes.Data);
-                    cmd.Parameters.AddWithValue("@correia_dentada", revisoes.Correia_dentada);
-                    cmd.Parameters.AddWithValue("@filtro_ar_condicionado", revisoes.Filtro_ar_condicionado);
-                    cmd.Parameters.AddWithValue("@correia_alternador", revisoes.Correia_alternador);
-                    cmd.Parameters.AddWithValue("@filtro_ar", revisoes.Filtro_ar);
+                    cmd.Parameters.AddWithValue("@correia_dentada", revisoes.CorreiaDentada);
+                    cmd.Parameters.AddWithValue("@filtro_ar_condicionado", revisoes.FiltroArCondicionado);
+                    cmd.Parameters.AddWithValue("@correia_alternador", revisoes.CorreiaAlternador);
+                    cmd.Parameters.AddWithValue("@filtro_ar", revisoes.FiltroAr);
                     cmd.Parameters.AddWithValue("@amortecedor", revisoes.Amortecedor);
                     cmd.Parameters.AddWithValue("@pneu", revisoes.Pneu);
-                    cmd.Parameters.AddWithValue("@fluido_transmissao", revisoes.Fluido_transmissao);
-                    cmd.Parameters.AddWithValue("@disco_freio", revisoes.Disco_freio);
-                    cmd.Parameters.AddWithValue("@fluido_direcao", revisoes.Fluido_direcao);
+                    cmd.Parameters.AddWithValue("@fluido_transmissao", revisoes.FluidoTransmissao);
+                    cmd.Parameters.AddWithValue("@disco_freio", revisoes.DiscoFreio);
+                    cmd.Parameters.AddWithValue("@fluido_direcao", revisoes.FluidoDirecao);
                     cmd.Parameters.AddWithValue("@alinhamento", revisoes.Alinhamento);
                     
                 }
