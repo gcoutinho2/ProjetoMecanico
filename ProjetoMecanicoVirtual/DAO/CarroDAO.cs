@@ -16,7 +16,7 @@ namespace ProjetoAdmin.DAO
                     cmd.Parameters.AddWithValue("@km", carro.Km);
                     cmd.Parameters.AddWithValue("@cor", carro.Cor);
                     cmd.Parameters.AddWithValue("@montadora", carro.Montadora);
-
+                    
                     cmd.ExecuteNonQuery();
                 }
             }

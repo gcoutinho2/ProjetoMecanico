@@ -11,13 +11,20 @@ namespace ProjetoMecanicoVirtual.Controllers
     public class VeiculoController : Controller
     {
         // GET: CadastroVeiculo
-        public ActionResult ConsultarInformacao()
+        public ActionResult CadastroVeiculo()
         {
 
             return View();
         }
 
-        public ActionResult CadastroVeiculo(Carro carro, Revisoes revisoes)
+        public ActionResult InsereCarro(Carro carro)
+        {
+            CarroDAO carroDAO = new CarroDAO();
+            carroDAO.InserirCarro(carro);
+            return Json(true);
+        }
+
+        public ActionResult CadastroNovoVeiculo(Carro carro, Revisoes revisoes)
         {
             CarroDAO carroDAO = new CarroDAO();
             RevisaoDAO revisaoDAO = new RevisaoDAO();
@@ -25,7 +32,7 @@ namespace ProjetoMecanicoVirtual.Controllers
             carroDAO.InserirCarro(carro);
             revisaoDAO.CadastrarRevisao(revisoes);
 
-            return View();
+            return Json(true, JsonRequestBehavior.AllowGet);
         }
     }
 }
