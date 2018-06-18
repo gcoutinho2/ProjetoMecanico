@@ -1,7 +1,7 @@
-﻿using ProjetoAdmin.Models;
+﻿using ProjetoMecanicoVirtual.Models;
 using System.Data.SqlClient;
 
-namespace ProjetoAdmin.DAO
+namespace ProjetoMecanicoVirtual.DAO
 {
     public class UsuarioDAO
     {
@@ -26,21 +26,7 @@ namespace ProjetoAdmin.DAO
             }
         }
 
-        public void InsereUsuarioBasico(Usuario usuario)
-        {
-            using (SqlConnection conn = Conexao.AbrirConexao())
-            {
-
-                conn.Open();
-
-                using (SqlCommand cmd = new SqlCommand("Insert into Cliente (Nome, Email,Usuario) values (@nome,@email,@usuario)"))
-                {
-                    cmd.Parameters.AddWithValue("",usuario.Nome);
-                    cmd.Parameters.AddWithValue("",usuario.Email);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-        }
+        
 
 
         public void AlteraUsuario(Usuario usuario)

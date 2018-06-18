@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ProjetoAdmin.Models
+namespace ProjetoMecanicoVirtual.Models
 {
     public class Usuario
     {
@@ -30,5 +30,7 @@ namespace ProjetoAdmin.Models
         public string EmailAlternativo { get; set; }
 
         public string Sexo { get; set; }
+
+        public string Senha{ get; set; }
     }
 }

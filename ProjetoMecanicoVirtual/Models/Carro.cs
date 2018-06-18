@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ProjetoAdmin.Models
+namespace ProjetoMecanicoVirtual.Models
 {
     public class Carro
     {

@@ -1,7 +1,7 @@
-﻿using ProjetoAdmin.Models;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
+using ProjetoMecanicoVirtual.Models;
 
-namespace ProjetoAdmin.DAO
+namespace ProjetoMecanicoVirtual.DAO
 {
     public class CarroDAO
     {

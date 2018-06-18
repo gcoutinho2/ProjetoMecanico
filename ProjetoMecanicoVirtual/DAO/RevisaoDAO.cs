@@ -1,11 +1,11 @@
-﻿using ProjetoAdmin.Models;
+﻿using ProjetoMecanicoVirtual.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace ProjetoAdmin.DAO
+namespace ProjetoMecanicoVirtual.DAO
 {
     public class RevisaoDAO
     {

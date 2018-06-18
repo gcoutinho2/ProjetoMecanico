@@ -169,6 +169,7 @@
     <Content Include="assets\vendor\jquery-easing\jquery.easing.compatibility.js" />
     <Content Include="assets\vendor\jquery-easing\jquery.easing.js" />
     <Content Include="assets\vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="assets\vendor\jquery\jquery-3.3.1.min.js" />
     <Content Include="assets\vendor\jquery\jquery.js" />
     <Content Include="assets\vendor\jquery\jquery.min.js" />
     <Content Include="assets\vendor\jquery\jquery.slim.js" />
@@ -178,9 +179,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="DAO\FuncionarioDAO.cs" />
     <Compile Include="Models\Acesso.cs" />
     <Compile Include="Models\Carro.cs" />
     <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\MensagemController.cs" />
@@ -256,6 +259,8 @@
     <Content Include="assets\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\Usuario\CadastroUser.cshtml" />
     <Content Include="Views\Shared\_Mestre.cshtml" />
+    <Content Include="assets\vendor\jquery\jquery-3.3.1.min.map" />
+    <Content Include="Views\Usuario\_Gerencia.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

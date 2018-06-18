@@ -1,7 +1,5 @@
-﻿using ProjetoAdmin.DAO;
-using ProjetoAdmin.Models;
-using ProjetoMecanicoVirtual.Bean;
-using ProjetoMecanicoVirtual.DAO;
+﻿using ProjetoMecanicoVirtual.DAO;
+using ProjetoMecanicoVirtual.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +52,15 @@ namespace ProjetoMecanicoVirtual.Controllers
             UsuarioDAO usuarioDAO = new UsuarioDAO();
             usuarioDAO.InserirUsuario(usuario);
             return Json(true);
+        }
+
+        public ActionResult InsereFuncionario(Usuario funcionario)
+        {
+            UsuarioDAO userDAO = new UsuarioDAO();
+
+            userDAO.InsereFuncionario(funcionario);
+
+            return Json("Cadastrado");
         }
     }
 }
