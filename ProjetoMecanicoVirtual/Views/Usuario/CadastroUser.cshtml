@@ -36,25 +36,25 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label class="text-base" for="tipoAcesso">Tipo de Acesso</label>
-                    <select id="tipoAcesso" class="form-control" name="tipoAcesso" data-bind="value: tipoAcesso, hasFocus: tipoAcesso.focused, css: { 'has-error': showError(tipoAcesso) }">
+                    <select id="tipoAcesso" class="form-control" name="TipoDeAcesso" data-bind="value: tipoAcesso, hasFocus: tipoAcesso.focused, css: { 'has-error': showError(tipoAcesso) }">
                         <option selected="selected" value="">Selecione...</option>
-                        <option value="a">Administrador</option>
-                        <option value="p">Padrão</option>
-                        <option value="c">Contribuidor</option>
+                        <option value="admin">Administrador</option>
+                        <option value="padrao">Padrão</option>
+                        <option value="contribuidor">Contribuidor</option>
                     </select>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputSenha">Senha</label>
-                    <input type="password" class="form-control" id="inputSenha" placeholder="Senha">
+                    <input type="password" class="form-control" id="inputSenha" placeholder="Senha" name="Senha">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputSenha2">Confirme a Senha</label>
-                    <input type="password" class="form-control" id="inputSenha2" placeholder="Repita a Senha">
+                    <input type="password" class="form-control" id="inputSenha2" placeholder="Repita a Senha" name="Senha2">
                 </div>
             </div>
-
+            <div id="SenhaErrada"></div>
             <div class="form-control">
                 <button class="btn" type="submit"> Criar Usuario</button>
             </div>
@@ -64,7 +64,7 @@
         <div style="height: 100px;"></div>
     </div>
    
-    <script type="text/javascript" src="~/assets/js/jquery-2.2.1.min.js"></script>
+   <script type="text/javascript" src="~/assets/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/assets/js/jquery.validate.min.js"></script>
     <script type="text/javascript">
@@ -80,27 +80,38 @@
                 email: true
             },
 
-            tipoAcesso: {
+            Login: {
                 required: true
             },
 
+            TipoDeAcesso: {
+                required: true
+            },
+
+            Senha: {
+                required: true
+            },
+            Senha2: {
+                required: true
+            }
         },
 
         submitHandler: function (form) {
-           
-        }
-    });
 
-
-        function CadastrarUsuario() {
+            if ($("#inputSenha").val() != $("#inputSenha2").val()) {
+                alert("Senha Errada");
+            }
             var usuario = {
                 Nome: $("#inputUser").val(),
                 Email: $("#inputEmailUser").val(),
+                TipoDeAcesso: $("#tipoAcesso").val(),
                 Senha: $("#inputSenha").val(),
             };
 
+            
+
             $.ajax({
-                url: "@Url.Action("","")",
+                url: "@Url.Action("InsereFuncionario", "Usuario")",
                 cache: false,
                 method: "post",
                 datatype: "json",
@@ -111,6 +122,9 @@
                 error: function () {
                 }
             });
+       
         }
+    });
+
     </script>
 }

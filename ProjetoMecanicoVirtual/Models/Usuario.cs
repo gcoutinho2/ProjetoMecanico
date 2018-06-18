@@ -30,5 +30,7 @@ namespace ProjetoAdmin.Models
         public string EmailAlternativo { get; set; }
 
         public string Sexo { get; set; }
+
+        public string Senha{ get; set; }
     }
 }

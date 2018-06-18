@@ -55,5 +55,14 @@ namespace ProjetoMecanicoVirtual.Controllers
             usuarioDAO.InserirUsuario(usuario);
             return Json(true);
         }
+
+        public ActionResult InsereFuncionario(Usuario usuario)
+        {
+            UsuarioDAO userDAO = new UsuarioDAO();
+
+            userDAO.InsereFuncionario(usuario);
+
+            return Json("Cadastrado");
+        }
     }
 }
