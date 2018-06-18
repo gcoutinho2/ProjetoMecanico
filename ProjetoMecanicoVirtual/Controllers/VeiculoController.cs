@@ -17,6 +17,11 @@ namespace ProjetoMecanicoVirtual.Controllers
             return View();
         }
 
+        public ActionResult ConsultarInformacao()
+        {
+            return View();
+        }
+
         public ActionResult InsereCarro(Carro carro)
         {
             CarroDAO carroDAO = new CarroDAO();
