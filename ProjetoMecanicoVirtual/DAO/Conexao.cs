@@ -1,6 +1,7 @@
 ﻿using System.Data.SqlClient;
+using ProjetoMecanicoVirtual.Models;
 
-namespace ProjetoAdmin.DAO
+namespace ProjetoMecanicoVirtual.DAO
 {
     public class Conexao
     {

@@ -1,5 +1,4 @@
-﻿using ProjetoAdmin.DAO;
-using ProjetoMecanicoVirtual.Bean;
+﻿using ProjetoMecanicoVirtual.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;

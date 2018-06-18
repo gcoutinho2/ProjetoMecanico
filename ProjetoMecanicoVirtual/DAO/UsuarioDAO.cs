@@ -1,7 +1,7 @@
-﻿using ProjetoAdmin.Models;
+﻿using ProjetoMecanicoVirtual.Models;
 using System.Data.SqlClient;
 
-namespace ProjetoAdmin.DAO
+namespace ProjetoMecanicoVirtual.DAO
 {
     public class UsuarioDAO
     {

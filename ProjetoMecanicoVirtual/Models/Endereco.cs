@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ProjetoMecanicoVirtual.Bean
+namespace ProjetoMecanicoVirtual.Models
 {
     public class Endereco
     {

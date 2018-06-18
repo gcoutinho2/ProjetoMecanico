@@ -1,7 +1,5 @@
-﻿using ProjetoAdmin.DAO;
-using ProjetoAdmin.Models;
-using ProjetoMecanicoVirtual.Bean;
-using ProjetoMecanicoVirtual.DAO;
+﻿using ProjetoMecanicoVirtual.DAO;
+using ProjetoMecanicoVirtual.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
