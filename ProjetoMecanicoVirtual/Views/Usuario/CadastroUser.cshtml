@@ -2,10 +2,7 @@
     Layout = "~/Views/Shared/_Mestre.cshtml";
 
 }
-
 @section Corpo {
-
-
 
     <div class="container-fluid">
         <!-- Breadcrumbs-->
@@ -19,7 +16,7 @@
         <hr>
         <p>Digite os dados abaixo</p>
 
-        <form>
+        <form id="criarUsuario">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputNome">Nome Funcionário</label>
@@ -33,6 +30,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
+                  
                     <label for="inputUser">Usuário</label>
                     <input type="text" class="form-control" id="inputUser" placeholder="Usuário">
                 </div>
@@ -56,44 +54,28 @@
                     <input type="password" class="form-control" id="inputSenha2" placeholder="Repita a Senha">
                 </div>
             </div>
-        </form>
 
-        <!-- Botão enviar-->
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <button type="button" id="cadUser" onclick="CriarUsuario();">Criar Usuário</button>
+            <div class="form-control">
+                <button class="btn" type="submit"> Criar Usuario</button>
             </div>
-        </div>
-
+        </form>
 
         <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
         <div style="height: 100px;"></div>
     </div>
-    <!-- Modal para dados enviados -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Dados de Acesso</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                </div>
-                <div class="modal-body">
-                    <p>Usuário criado com sucesso</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
+   
     <script type="text/javascript" src="~/assets/js/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery-2.2.1.min.js"></script>
     <script type="text/javascript">
+
+
+        $("#criarUsuario").validate({
+            rules: {
+
+            }
+        });
+
 
 
         function CadastrarUsuario() {
@@ -113,14 +95,8 @@
 
                 },
                 error: function () {
-
                 }
-
             });
-
         }
     </script>
-
-
-
 }

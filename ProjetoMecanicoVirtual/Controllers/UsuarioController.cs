@@ -27,9 +27,7 @@ namespace ProjetoMecanicoVirtual.Controllers
         {
             return View();
         }
-
         
-
         public ActionResult CadastroPosCadastro(Usuario user)
         {
             UsuarioDAO userDao = new UsuarioDAO();

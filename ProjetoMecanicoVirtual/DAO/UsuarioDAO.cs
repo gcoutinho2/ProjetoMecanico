@@ -9,7 +9,7 @@ namespace ProjetoAdmin.DAO
         {
             using (SqlConnection conn = Conexao.AbrirConexao())
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Usuario ( cpf, nome, sobrenome, num_telefone, rg, data_nasc, email, email_alternativo, sexo) VALUES ( @cpf, @nome, @sobrenome,@num_telefone, @rg, @data_nasc, @email, @email_alternativo, @sexo )", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Cliente ( cpf, nome, sobrenome, num_telefone, rg, data_nasc, email, email_alternativo, sexo) VALUES ( @cpf, @nome, @sobrenome,@num_telefone, @rg, @data_nasc, @email, @email_alternativo, @sexo )", conn))
                 {
                     cmd.Parameters.AddWithValue("@cpf", usuario.Cpf);
                     cmd.Parameters.AddWithValue("@nome", usuario.Nome);
@@ -21,6 +21,22 @@ namespace ProjetoAdmin.DAO
                     cmd.Parameters.AddWithValue("@email_alternativo", usuario.EmailAlternativo);
                     cmd.Parameters.AddWithValue("@sexo", usuario.Sexo);
 
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void InsereUsuarioBasico(Usuario usuario)
+        {
+            using (SqlConnection conn = Conexao.AbrirConexao())
+            {
+
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand("Insert into Cliente (Nome, Email,Usuario) values (@nome,@email,@usuario)"))
+                {
+                    cmd.Parameters.AddWithValue("",usuario.Nome);
+                    cmd.Parameters.AddWithValue("",usuario.Email);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -42,7 +58,6 @@ namespace ProjetoAdmin.DAO
                     cmd.Parameters.AddWithValue("@data_nasc", usuario.DtaNascimento);
                     cmd.Parameters.AddWithValue("@email_alternativo", usuario.EmailAlternativo);
                     cmd.Parameters.AddWithValue("@sexo", usuario.Sexo);
-
                     cmd.Parameters.AddWithValue("@id", usuario.Id);
 
                     cmd.ExecuteNonQuery();
@@ -54,7 +69,7 @@ namespace ProjetoAdmin.DAO
         {
             using (SqlConnection conn = Conexao.AbrirConexao())
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE Usuario SET Cpf = @cpf, Nome = @nome, Sobrenome = @sobrenome, Num_Telefone = @num_telefone, Rg = @rg, Data_nasc = @data_nasc, Email = @email, Email_alternativo = @email_alternativo, sexo = @sexo  WHERE Id = @id", conn))
+                using (SqlCommand cmd = new SqlCommand("UPDATE Cliente SET Cpf = @cpf, Nome = @nome, Sobrenome = @sobrenome, Num_Telefone = @num_telefone, Rg = @rg, Data_nasc = @data_nasc, Email = @email, Email_alternativo = @email_alternativo, sexo = @sexo  WHERE Id = @id", conn))
                 {
                     cmd.Parameters.AddWithValue("@cpf", usuario.Cpf);
                     cmd.Parameters.AddWithValue("@nome", usuario.Nome);
@@ -122,7 +137,7 @@ namespace ProjetoAdmin.DAO
                 conn.Open();
 
                 using (SqlCommand cmd = new SqlCommand(@"
-                    DELETE FROM Usuario
+                    DELETE FROM Cliente
                     WHERE UsuarioId = @id", conn))
 
                 {
