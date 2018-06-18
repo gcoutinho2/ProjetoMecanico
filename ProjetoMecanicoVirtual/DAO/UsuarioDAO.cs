@@ -26,14 +26,14 @@ namespace ProjetoAdmin.DAO
             }
         }
 
-        public void InsereUsuarioBasico(Usuario usuario)
+        public void InsereFuncionario(Usuario usuario)
         {
             using (SqlConnection conn = Conexao.AbrirConexao())
             {
 
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("Insert into Cliente (Nome, Email,Usuario) values (@nome,@email,@usuario)"))
+                using (SqlCommand cmd = new SqlCommand("Insert into Funcionario (Nome, Email,Usuario) values (@nome,@email,@usuario)"))
                 {
                     cmd.Parameters.AddWithValue("",usuario.Nome);
                     cmd.Parameters.AddWithValue("",usuario.Email);
