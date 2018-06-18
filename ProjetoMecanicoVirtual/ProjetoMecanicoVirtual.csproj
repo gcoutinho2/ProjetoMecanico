@@ -169,6 +169,7 @@
     <Content Include="assets\vendor\jquery-easing\jquery.easing.compatibility.js" />
     <Content Include="assets\vendor\jquery-easing\jquery.easing.js" />
     <Content Include="assets\vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="assets\vendor\jquery\jquery-3.3.1.min.js" />
     <Content Include="assets\vendor\jquery\jquery.js" />
     <Content Include="assets\vendor\jquery\jquery.min.js" />
     <Content Include="assets\vendor\jquery\jquery.slim.js" />
@@ -256,6 +257,7 @@
     <Content Include="assets\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\Usuario\CadastroUser.cshtml" />
     <Content Include="Views\Shared\_Mestre.cshtml" />
+    <Content Include="assets\vendor\jquery\jquery-3.3.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
