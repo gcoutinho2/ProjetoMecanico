@@ -54,11 +54,11 @@ namespace ProjetoMecanicoVirtual.Controllers
             return Json(true);
         }
 
-        public ActionResult InsereFuncionario(Usuario usuario)
+        public ActionResult InsereFuncionario(Usuario funcionario)
         {
             UsuarioDAO userDAO = new UsuarioDAO();
 
-            userDAO.InsereFuncionario(usuario);
+            userDAO.InsereFuncionario(funcionario);
 
             return Json("Cadastrado");
         }
