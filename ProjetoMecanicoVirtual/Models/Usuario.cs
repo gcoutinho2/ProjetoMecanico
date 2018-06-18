@@ -22,8 +22,7 @@ namespace ProjetoAdmin.Models
         public DateTime DtaNascimento { get; set; }
 
         public string Email { get; set; }
-
-        public string Usuario{ get; set; }
+        
         public string EmailAlternativo { get; set; }
 
         public string Sexo { get; set; }

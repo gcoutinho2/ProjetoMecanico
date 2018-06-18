@@ -176,10 +176,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Bean\Acesso.cs" />
-    <Compile Include="Bean\Carro.cs" />
-    <Compile Include="Bean\Endereco.cs" />
-    <Compile Include="Bean\Usuario.cs" />
+    <Compile Include="Models\Acesso.cs" />
+    <Compile Include="Models\Carro.cs" />
+    <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\MensagemController.cs" />
     <Compile Include="Controllers\VeiculoController.cs" />
@@ -193,7 +193,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Bean\Revisoes.cs" />
+    <Compile Include="Models\Revisoes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -263,7 +263,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
