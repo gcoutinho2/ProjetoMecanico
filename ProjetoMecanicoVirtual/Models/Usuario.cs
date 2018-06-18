@@ -21,12 +21,12 @@ namespace ProjetoAdmin.Models
 
         public DateTime DtaNascimento { get; set; }
 
+        public string Login{ get; set; }
+
         public string Email { get; set; }
         
         public string EmailAlternativo { get; set; }
 
         public string Sexo { get; set; }
-
-
     }
 }

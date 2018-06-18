@@ -20,19 +20,19 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputNome">Nome Funcionário</label>
-                    <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+                    <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="Nome">
                 </div>
 
                 <div class="form-group col-md-6">
                     <label for="inputEmailUser">Email</label>
-                    <input type="email" class="form-control" id="inputEmailUser" placeholder="Email">
+                    <input type="email" class="form-control" id="inputEmailUser" placeholder="Email" name="Email">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                   
                     <label for="inputUser">Usuário</label>
-                    <input type="text" class="form-control" id="inputUser" placeholder="Usuário">
+                    <input type="text" class="form-control" id="inputUser" placeholder="Usuário" name="Login">
                 </div>
                 <div class="form-group col-md-6">
                     <label class="text-base" for="tipoAcesso">Tipo de Acesso</label>
@@ -66,16 +66,25 @@
    
     <script type="text/javascript" src="~/assets/js/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="~/assets/js/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.validate.min.js"></script>
     <script type="text/javascript">
-
-
         $("#criarUsuario").validate({
-            rules: {
+        rules: {
+            Nome: {
+                required: true,
+                minlength: 3
+            },
 
+            Email: {
+                required: true,
+                email: true
             }
-        });
+        },
 
+        submitHandler: function (form) {
+           
+        }
+    });
 
 
         function CadastrarUsuario() {
