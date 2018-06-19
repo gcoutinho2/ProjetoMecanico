@@ -21,17 +21,17 @@
                     <label class="text-base" for="Marca">Marca</label>
                     <select id="Marca" class="form-control" name="Marca">
                         <option selected="selected" value="">Selecione...</option>
-                        <option>FIAT</option>
-                        <option>CHEVROLET</option>
-                        <option>VOLKSWAGEN</option>
-                        <option>FORD</option>
+                        <option value="fiat">FIAT</option>
+                        <option value="chevrolet">CHEVROLET</option>
+                        <option value="volkswagem">VOLKSWAGEN</option>
+                        <option value="ford">FORD</option>
                     </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label class="text-base" for="Modelo">Modelo</label>
                     <select id="Modelo" class="form-control" name="Modelo">
                         <option selected="selected" value="">Selecione...</option>
-                        <option>Palio 1.4</option>
+                        <option></option>
                     </select>
                 </div>
             </div>
@@ -169,13 +169,31 @@
 
         <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
         <div style="height: 100px;"></div>
-    </div>
-
-  
+    </div> 
 
 
     <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+
+
+        
+        $(function () {            
+            $("#Marca").ready(function () {
+                $("Modelo").change(function () {
+                    $("Modelo").html('<option value=""></option>');
+                var texto = $(this).val();
+
+                    if (texto === "fiat") {
+                    var option = document.createElement("option");
+                    option.appendChild("Palio");
+                }
+         
+                
+                });
+            });
+        });
+
+
 
         function cadastro() {
            

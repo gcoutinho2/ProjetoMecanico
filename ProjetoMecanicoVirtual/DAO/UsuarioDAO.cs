@@ -26,21 +26,7 @@ namespace ProjetoMecanicoVirtual.DAO
             }
         }
 
-        public void InsereFuncionario(Usuario usuario)
-        {
-            using (SqlConnection conn = Conexao.AbrirConexao())
-            {
-
-                conn.Open();
-
-                using (SqlCommand cmd = new SqlCommand("Insert into Funcionario (Nome, Email,Usuario) values (@nome,@email,@usuario)"))
-                {
-                    cmd.Parameters.AddWithValue("",usuario.Nome);
-                    cmd.Parameters.AddWithValue("",usuario.Email);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-        }
+        
 
 
         public void AlteraUsuario(Usuario usuario)
