@@ -36,11 +36,11 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label class="text-base" for="tipoAcesso">Tipo de Acesso</label>
-                    <select id="tipoAcesso" class="form-control" name="TipoDeAcesso" data-bind="value: tipoAcesso, hasFocus: tipoAcesso.focused, css: { 'has-error': showError(tipoAcesso) }">
+                    <select id="tipoAcesso" class="form-control" name="TipoAcesso">
                         <option selected="selected" value="">Selecione...</option>
-                        <option value="admin">Administrador</option>
-                        <option value="padrao">Padrão</option>
-                        <option value="contribuidor">Contribuidor</option>
+                        <option value="admin" >Administrador</option>
+                        <option value="padrao" >Padrão</option>
+                        <option value="contribuidor" >Contribuidor</option>
                     </select>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                 required: true
             },
 
-            TipoDeAcesso: {
+            TipoAcesso: {
                 required: true
             },
 
@@ -102,14 +102,14 @@
                 alert("Senha Errada");
             }
             var usuario = {
-                Nome: $("#inputUser").val(),
+                Nome: $("#inputNome").val(),
                 Email: $("#inputEmailUser").val(),
-                TipoDeAcesso: $("#tipoAcesso").val(),
+                Usuario: $("#inputUser").val(),
+                TipoAcesso: $("#tipoAcesso").val(),
                 Senha: $("#inputSenha").val(),
             };
-
+            debugger;
             
-
             $.ajax({
                 url: "@Url.Action("InsereFuncionario", "Usuario")",
                 cache: false,
@@ -117,9 +117,10 @@
                 datatype: "json",
                 data: usuario,
                 success: function (dados) {
-
+                    alert("Cadastrado");
                 },
                 error: function () {
+                    alert("Erro");
                 }
             });
        
