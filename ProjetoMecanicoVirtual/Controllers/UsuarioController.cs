@@ -23,7 +23,7 @@ namespace ProjetoMecanicoVirtual.Controllers
 
         public ActionResult GerenciarUser()
         {
-            return View();
+            return View(FuncionarioDAO.ListarFuncionario());
         }
         
         public ActionResult CadastroPosCadastro(Usuario user)
@@ -54,12 +54,9 @@ namespace ProjetoMecanicoVirtual.Controllers
             return Json(true);
         }
 
-        public ActionResult InsereFuncionario(Usuario funcionario)
+        public ActionResult InsereFuncionario(Funcionario funcionario)
         {
-            UsuarioDAO userDAO = new UsuarioDAO();
-
-            userDAO.InsereFuncionario(funcionario);
-
+            FuncionarioDAO.InsereFuncionario(funcionario);
             return Json("Cadastrado");
         }
     }

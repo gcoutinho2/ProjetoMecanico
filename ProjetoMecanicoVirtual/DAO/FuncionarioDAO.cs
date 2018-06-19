@@ -7,9 +7,9 @@ using System.Data.SqlClient;
 
 namespace ProjetoMecanicoVirtual.DAO
 {
-    public class FuncionarioDAO
+    public static class FuncionarioDAO
     {
-        public void InsereFuncionario(Funcionario funcionario)
+        public static void InsereFuncionario(Funcionario funcionario)
         {
             using (SqlConnection conn = Conexao.AbrirConexao())
             {
@@ -26,7 +26,7 @@ namespace ProjetoMecanicoVirtual.DAO
             }
         }
 
-        public void AlterarFuncionario(Funcionario funcionario)
+        public static void AlterarFuncionario(Funcionario funcionario)
         {
             using (SqlConnection conn = Conexao.AbrirConexao())
             {
