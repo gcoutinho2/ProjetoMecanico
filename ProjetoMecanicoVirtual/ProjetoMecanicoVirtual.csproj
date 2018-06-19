@@ -198,13 +198,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\MarcaController.cs" />
     <Compile Include="DAO\FuncionarioDAO.cs" />
+    <Compile Include="DAO\MarcaDAO.cs" />
     <Compile Include="DAO\MensagemDAO.cs" />
     <Compile Include="Models\Acesso.cs" />
     <Compile Include="Models\Carro.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Mensagem.cs" />
+    <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\MensagemController.cs" />
@@ -326,6 +329,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Marca\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
