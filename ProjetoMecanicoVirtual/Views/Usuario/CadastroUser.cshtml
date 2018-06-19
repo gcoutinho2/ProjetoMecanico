@@ -5,16 +5,9 @@
 @section Corpo {
 
     <div class="container-fluid">
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">i4Tech</a>
-            </li>
-            <li class="breadcrumb-item active">Navbar</li>
-        </ol>
+
         <h1>Cadastro Funcionário</h1>
         <hr>
-        <p>Digite os dados abaixo</p>
 
         <form id="criarUsuario">
             <div class="form-row">
@@ -30,7 +23,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                  
+
                     <label for="inputUser">Usuário</label>
                     <input type="text" class="form-control" id="inputUser" placeholder="Usuário" name="Login">
                 </div>
@@ -38,9 +31,9 @@
                     <label class="text-base" for="tipoAcesso">Tipo de Acesso</label>
                     <select id="tipoAcesso" class="form-control" name="TipoAcesso">
                         <option selected="selected" value="">Selecione...</option>
-                        <option value="admin" >Administrador</option>
-                        <option value="padrao" >Padrão</option>
-                        <option value="contribuidor" >Contribuidor</option>
+                        <option value="admin">Administrador</option>
+                        <option value="padrao">Padrão</option>
+                        <option value="contribuidor">Contribuidor</option>
                     </select>
                 </div>
             </div>
@@ -53,18 +46,24 @@
                     <label for="inputSenha2">Confirme a Senha</label>
                     <input type="password" class="form-control" id="inputSenha2" placeholder="Repita a Senha" name="Senha2">
                 </div>
+                <div id="SenhaErrada"></div>
             </div>
-            <div id="SenhaErrada"></div>
-            <div class="form-control">
-                <button class="btn" type="submit"> Criar Usuario</button>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <button class="btn" type="submit"> Criar Usuario</button>
+                </div>
             </div>
+
+
         </form>
 
         <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
-        <div style="height: 100px;"></div>
+
     </div>
-   
-   <script type="text/javascript" src="~/assets/js/jquery-3.3.1.min.js"></script>
+    <div style="height: 191px;"></div>
+
+    <script type="text/javascript" src="~/assets/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/assets/js/jquery.validate.min.js"></script>
     <script type="text/javascript">
@@ -109,7 +108,7 @@
                 Senha: $("#inputSenha").val(),
             };
             debugger;
-            
+
             $.ajax({
                 url: "@Url.Action("InsereFuncionario", "Usuario")",
                 cache: false,
@@ -123,7 +122,7 @@
                     alert("Erro");
                 }
             });
-       
+
         }
     });
 

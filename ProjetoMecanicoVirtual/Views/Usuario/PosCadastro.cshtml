@@ -5,13 +5,7 @@
 
 @section Corpo {
     <div class="container-fluid">
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">i4Tech</a>
-            </li>
-            <li class="breadcrumb-item active">Navbar</li>
-        </ol>
+       
         <h1>Atualização de Cadastro</h1>
         <hr>
         <p>Parabéns! Você já criou o seu pré cadastro, vamos atualizar mais alguns dados.</p>
@@ -63,7 +57,7 @@
                 <div class="form-group col-md-2">
                     <label for="inputCep">CEP</label>
                     <input type="text" class="form-control" id="inputCep">
-                    Não sabe o CEP? <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank" class="aConsultaCEP">Pesquisar</a>
+             
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputEnd">Endereço</label>
@@ -116,7 +110,7 @@
                         <option value="SE">SE</option>
                         <option value="SP">SP</option>
                         <option value="TO">TO</option>
-                   
+
                     </select>
                 </div>
                 <div class="form-group col-md-4">
@@ -411,13 +405,18 @@
             </div>
 
             <!-- Botão enviar-->
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <button type="button" id="enviarDados" class="btn btn-default bt-edit" onclick="ConfirmarCadastro()">Salvar Alterações</button>
+                </div>
 
-            <button type="button" id="enviarDados" class="btn btn-success mesmo-tamanho" onclick="ConfirmarCadastro();">Salvar Alterações</button>
+            </div>
+
 
         </form>
         <!-- Finalizando Cadastro -->
         <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
-        <div style="height: 100px;"></div>
+        <div style="height: 150px;"></div>
     </div>
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">

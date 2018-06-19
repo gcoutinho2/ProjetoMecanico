@@ -1,165 +1,131 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="~/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>i4Tech</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="~/assets/css/sb-admin.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="~/assets/css/plugins/morris.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="~/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery -->
+    <script src="~/assets/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <!-- Morris Charts JavaScript -->
 
+    <script src="~/assets/js/plugins/morris/raphael.min.js"></script>
+    <script src="~/assets/js/plugins/morris/morris.min.js"></script>
+    <script src="~/assets/js/plugins/morris/morris-data.js"></script>
+    <script type="text/javascript">
+
+    </script>
 </head>
 <body>
-    <div id="vao3"></div>
-    <div>
-        <div class="fixed-nav sticky-footer bg-dark" id="page-top">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-                <a class="navbar-brand" href="@Url.Action("Default","Default")">i4Tech</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-                        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                                <i class="fa fa-fw fa-address-card-o"></i>
-                                <span class="nav-link-text">Cadastro</span>
-                            </a>
-                            <ul class="sidenav-second-level collapse" id="collapseComponents">
-                                <li>
-                                    <a href="@Url.Action("PosCadastro","Usuario")">Atualizar Cadastro</a>
-                                </li>
-                                
-                            </ul>
+                <a class="navbar-brand" href="@Url.Action("Default","Default")">i4Tech</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Nome Usuário <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Perfil</a>
                         </li>
-                        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-                            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-                                <i class="fa fa-fw fa-automobile"></i>
-                                <span class="nav-link-text">Veículo</span>
-                            </a>
-                            <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-                                <li>
-                                    <a href="@Url.Action("CadastroVeiculo","Veiculo")">Cadastro</a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("ConsultarInformacao","Veiculo")">Consultar Informações</a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("Mensagem","Mensagem")">Informar Erro</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-                            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages2" data-parent="#exampleAccordion">
-                                <i class="fa fa-fw fa-user"></i>
-                                <span class="nav-link-text">Funcionários</span>
-                            </a>
-                            <ul class="sidenav-second-level collapse" id="collapseExamplePages2">
-                                <li>
-                                    <a href="@Url.Action("CadastroUser","Usuario")">Cadastrar</a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("GerenciarUser","Usuario")">Gerenciar</a>
-                                </li>
-                             
-                            
-                            </ul>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Caixa de Entrada</a>
                         </li>
                       
-                    </ul>
-                    <ul class="navbar-nav sidenav-toggler">
-                        <li class="nav-item">
-                            <a class="nav-link text-center" id="sidenavToggler">
-                                <i class="fa fa-fw fa-angle-left"></i>
-                            </a>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Sair</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav ml-auto">
-              
-                  
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                                <i class="fa fa-fw fa-sign-out"></i>Logout
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            
-            <div class="content-wrapper">
-                
-                <div class="container-fluid">
-                 @RenderSection("Corpo")
-                  
-                </div>
-                <!-- /.container-fluid-->
-                <!-- /.content-wrapper-->
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-list-alt" aria-hidden="true"></i> Cadastro <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="@Url.Action("PosCadastro","Usuario")">Atualizar Cadastro</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-car" aria-hidden="true"></i> Veículo <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo2" class="collapse">
+                            <li>
+                                <a href="@Url.Action("CadastroVeiculo","Veiculo")">Cadastro</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("ConsultarInformacao","Veiculo")">Consultar Informações</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Mensagem","Mensagem")">Informar Erro</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="fa fa-user" aria-hidden="true"></i> Funcionários <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo3" class="collapse">
 
-                <footer class="sticky-footer">
-                    <div class="container">
-                        <div class="text-center">
-                            <small>Copyright © i4Tech 2018</small>
-                        </div>
-                    </div>
-                </footer>
-
-
-                <!-- Scroll to Top Button-->
-                <a class="scroll-to-top rounded" href="#page-top">
-                    <i class="fa fa-angle-up"></i>
-                </a>
-                <!-- Logout Modal-->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Você realmente deseja sair?</h5>
-                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">Clique em "Sair" abaixo se você estiver pronto para encerrar sua sessão atual.</div>
-                            <div class="modal-footer">
-                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                                <a class="btn btn-primary" href="login.html">Sair</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <script src="~/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-                @*<script src="~/assets/vendor/jquery/jquery.min.js"></script>*@
-                <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                <script src="~/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-                <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
-                <script src="~/assets/js/sb-admin.min.js"></script>
+                            <li>
+                                <a href="@Url.Action("CadastroUser","Usuario")">Cadastrar</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("GerenciarUser","Usuario")">Gerenciar</a>
+                            </li>
 
 
-
-                <script>
-            $('#toggleNavPosition').click(function () {
-                $('body').toggleClass('fixed-nav');
-                $('nav').toggleClass('fixed-top static-top');
-            });
-
-                </script>
-                <!-- Toggle between dark and light navbar-->
-                <script>
-            $('#toggleNavColor').click(function () {
-                $('nav').toggleClass('navbar-dark navbar-light');
-                $('nav').toggleClass('bg-dark bg-light');
-                $('body').toggleClass('bg-dark bg-light');
-            });
-
-                </script>
+                        </ul>
+                    </li>
+        
+                </ul>
             </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                @RenderSection("Corpo")
+            </div>
+            <!-- /.container-fluid -->
         </div>
-
-        @RenderBody()
-
+        <!-- /#page-wrapper -->
 
     </div>
+
+    <!-- /#wrapper -->
+   
+
+    @RenderBody()
 </body>
 </html>
+

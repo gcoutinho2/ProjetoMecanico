@@ -5,13 +5,7 @@
 
 @section Corpo {
     <div class="container-fluid">
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">i4Tech</a>
-            </li>
-            <li class="breadcrumb-item active">Navbar</li>
-        </ol>
+
         <h1>Cadastrar Informações do Veículo</h1>
         <hr>
         <form>
@@ -86,7 +80,7 @@
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="velas">
-                                <input type="checkbox" id="velas" value="1" name="Velas"/> Velas
+                                <input type="checkbox" id="velas" value="1" name="Velas" /> Velas
                             </label>
                         </div>
 
@@ -159,20 +153,22 @@
                 <div class="form-group col-md-12">
                     <button type="button" id="cadVeiculo" class="btn btn-default bt-edit" onclick="cadastro()">Cadastrar</button>
                 </div>
+
             </div>
 
         </form>
 
 
         <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
-        <div style="height: 100px;"></div>
-    </div> 
+
+    </div>
+    <div style="height: 90px;"></div>
 
 
     <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        
-        //$(function () {            
+
+        //$(function () {
         //    $("#Marca").ready(function () {
         //        $("Modelo").change(function () {
         //            $("Modelo").html('<option value=""></option>');
@@ -183,7 +179,7 @@
         //            option.appendChild("Palio");
         //        }
          
-                
+        
         //        });
         //    });
         //});
@@ -216,7 +212,7 @@
                 FluidoDoOleo: $("#fluidoOleo").val()
             }
         }
-        
+
         $.ajax({
             url: "@Url.Action("CadastroNovoVeiculo", "Veiculo")",
             cache: false,
@@ -233,7 +229,7 @@
         });
     }
 
-</script>
+    </script>
 }
 
 
