@@ -1,7 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Mestre.cshtml";
 
-    //List<string> marcas = (List<string>)ViewBag.Marcas;
     List<string> marcas = new List<string>() { "FIAT", "GM" };
 }
 
@@ -174,7 +173,7 @@
 
         document.getElementById("Marca").onchange = function () {
             $.ajax({
-                url: "/Veiculo/ObterModelos",
+                url: "@Url.Action("InsereMarca", "Marca")",
                 method: "get",
                 cache: false,
                 data: { marca: this.value },
@@ -208,7 +207,6 @@
         //});
 
         function cadastro() {
-            debugger;
             var cadastroVeiculo = {
                 carro : {
                 Montadora: $("#Marca").val(),
