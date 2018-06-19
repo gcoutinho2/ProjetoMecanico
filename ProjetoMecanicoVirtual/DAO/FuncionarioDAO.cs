@@ -13,7 +13,8 @@ namespace ProjetoMecanicoVirtual.DAO
         {
             using (SqlConnection conn = Conexao.AbrirConexao())
             {
-                using (SqlCommand cmd = new SqlCommand("Insert into Funcionario (Nome, Email,Usuario, Senha, Tipo_User,ativo) values (@nome,@email,@usuario, @senha, @tipo_user, @ativo)"))
+               
+                using (SqlCommand cmd = new SqlCommand("Insert into Funcionario (Nome, Email,Usuario, Senha, Tipo_User,ativo) values (@nome,@email,@usuario, @senha, @tipo_user, @ativo)", conn))
                 {
                     cmd.Parameters.AddWithValue("@nome", funcionario.Nome);
                     cmd.Parameters.AddWithValue("@email", funcionario.Email);
