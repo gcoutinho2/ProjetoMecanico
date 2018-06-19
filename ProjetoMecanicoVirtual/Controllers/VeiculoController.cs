@@ -13,7 +13,6 @@ namespace ProjetoMecanicoVirtual.Controllers
         // GET: CadastroVeiculo
         public ActionResult CadastroVeiculo()
         {
-
             return View();
         }
 

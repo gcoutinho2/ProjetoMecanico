@@ -19,7 +19,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label class="text-base" for="Marca">Marca</label>
-                    <select id="Marca" class="form-control" name="Marca">
+                    <select id="Marca" class="form-control" name="Montadora">
                         <option selected="selected" value="">Selecione...</option>
                         <option value="fiat">FIAT</option>
                     </select>
@@ -86,7 +86,7 @@
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="velas">
-                                <input type="checkbox" id="velas" value="velas" /> Velas
+                                <input type="checkbox" id="velas" value="1" name="Velas"/> Velas
                             </label>
                         </div>
 
@@ -190,10 +190,9 @@
 
         function cadastro() {
             debugger;
-            var cadastro = {
-            
-            carro : {
-                Marca: $("#Marca").val(),
+            var cadastroVeiculo = {
+                carro : {
+                Montadora: $("#Marca").val(),
                 Modelo: $("#Modelo").val(),
                 Cor: $("#inputCor").val(),
                 Ano: $("#inputAno").val(),
@@ -218,13 +217,12 @@
             }
         }
         
-
         $.ajax({
-            url: "@Url.Action("CadastroVeiculo", "Veiculo")",
+            url: "@Url.Action("CadastroNovoVeiculo", "Veiculo")",
             cache: false,
             method: "post",
             datatype: "json",
-            data: cadastro,
+            data: cadastroVeiculo,
             success: function (dados) {
 
                 alert("Sucesso");
