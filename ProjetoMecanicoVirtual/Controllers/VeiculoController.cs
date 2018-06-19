@@ -38,5 +38,22 @@ namespace ProjetoMecanicoVirtual.Controllers
 
             return Json(true, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult ObterModelos(string marca)
+        {
+            List<string> modelos;
+
+            switch (marca)
+            {
+                case "FIAT":
+                    modelos = new List<string>() { "MA", "MB" };
+                    break;
+                default:
+                    modelos = new List<string>() { "MC", "MD" };
+                    break;
+            }
+
+            return Json(modelos, JsonRequestBehavior.AllowGet);
+        }
     }
 }

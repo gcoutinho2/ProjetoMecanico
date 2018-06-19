@@ -1,6 +1,8 @@
 ﻿@{
     Layout = "~/Views/Shared/_Mestre.cshtml";
 
+    //List<string> marcas = (List<string>)ViewBag.Marcas;
+    List<string> marcas = new List<string>() { "FIAT", "GM" };
 }
 
 @section Corpo {
@@ -15,14 +17,16 @@
                     <label class="text-base" for="Marca">Marca</label>
                     <select id="Marca" class="form-control" name="Montadora">
                         <option selected="selected" value="">Selecione...</option>
-                        <option value="fiat">FIAT</option>
+                        @foreach (string marca in marcas)
+                        {
+                            <option value="@marca">@marca</option>
+                        }
                     </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label class="text-base" for="Modelo">Modelo</label>
                     <select id="Modelo" class="form-control" name="Modelo">
                         <option selected="selected" value="">Selecione...</option>
-                        <option value="palio elx">PALIO ELX 1.4</option>
                     </select>
                 </div>
             </div>
@@ -160,13 +164,32 @@
 
 
         <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
-
+        @*  *@
     </div>
     <div style="height: 90px;"></div>
 
 
     <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+
+        document.getElementById("Marca").onchange = function () {
+            $.ajax({
+                url: "/Veiculo/ObterModelos",
+                method: "get",
+                cache: false,
+                data: { marca: this.value },
+                success: function (dados) {
+                    var html = '<option selected="selected">Selecione...</option>';
+                    for (var i = 0; i < dados.length; i++) {
+                        html += '<option value="' + dados[i] + '">' + dados[i] + '</option>';
+                    }
+                    document.getElementById("Modelo").innerHTML = html;
+                },
+                error: function (x) {
+                    alert(x);
+                }
+            });
+        };
 
         //$(function () {
         //    $("#Marca").ready(function () {
