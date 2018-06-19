@@ -1,5 +1,5 @@
 ﻿
-@model  List<ProjetoAdmin.Models.>
+@model  List<ProjetoMecanicoVirtual.Models.Funcionario>
 
 @{
     Layout = null;
@@ -48,7 +48,7 @@
             };
 
             $.ajax({
-                url: "/Pessoa/Modal",
+                url: "/Usuario/ModalGerencia",
                 cache: false,
                 method: "get",
                 data: obj,
