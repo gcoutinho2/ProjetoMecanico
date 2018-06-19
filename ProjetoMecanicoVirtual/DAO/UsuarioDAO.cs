@@ -26,8 +26,6 @@ namespace ProjetoMecanicoVirtual.DAO
             }
         }
 
-        
-
 
         public void AlteraUsuario(Usuario usuario)
         {

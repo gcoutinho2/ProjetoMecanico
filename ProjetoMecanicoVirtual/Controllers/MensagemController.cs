@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjetoMecanicoVirtual.DAO;
+using ProjetoMecanicoVirtual.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,11 @@ namespace ProjetoMecanicoVirtual.Controllers
         public ActionResult Mensagem()
         {
             return View();
+        }
+        public ActionResult InsereMsg(Mensagem mensagem)
+        {
+            MensagemDAO.InserirMensagem(mensagem);
+            return Json(true);
         }
     }
 }
