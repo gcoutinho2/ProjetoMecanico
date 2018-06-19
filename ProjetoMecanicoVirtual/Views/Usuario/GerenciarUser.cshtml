@@ -26,6 +26,7 @@
                     <th>Nome</th>
                     <th>Login</th>
                     <th>Tipo</th>
+                    <th>Ativo</th>
                     <th>Exibir</th>
                 </tr>
             </thead>
@@ -37,6 +38,8 @@
                         <td>@Model[i].Nome</td>
                         <td>@Model[i].Usuario</td>
                         <td>@Model[i].TipoAcesso</td>
+                        
+                        <td>@(Model[i].Ativo == true ? "Sim" : "Não")</td>
                         <td>
                             <button type="button" class="btn btn-primary" onclick="exibirNomeId(@Model[i].Id)">Exibir</button>
                         </td>
@@ -46,38 +49,41 @@
         </table>
 
     </div>
+    <div id="vao3"></div>
     </div>
-    <div id="vao2"></div>
 
-    <script type="text/javascript">
-        function exibirNomeId(id) {
-            if ($.active) {
-                return;
-            }
-
-            var obj = {
-                id: id
-            };
-
-            $.ajax({
-                url: "/Usuario/ModalGerencia",
-                cache: false,
-                method: "get",
-                data: obj,
-                success: function (dados) {
-                    $("#vao2").html(dados);
-
-                    $("#modalExibir").modal({
-                        backdrop: "static",
-                        keyboard: false
-                    });
-                },
-                error: function () {
-                    alert("Deu erro");
-                }
-            });
+<script type="text/javascript" src="~/assets/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    function exibirNomeId(id) {
+        if ($.active) {
+            return;
         }
-    </script>
+
+        var obj = {
+            id: id
+        };
+
+        $.ajax({
+            url: "/Usuario/ModalGerencia",
+            cache: false,
+            method: "get",
+            data: obj,
+            success: function (dados) {
+                $("#vao3").html(dados);
+
+                $("#modalExibir").modal();
+            },
+            error: function () {
+                alert("Deu erro");
+            }
+        });
+    }
+</script>
+
+
+
+
 
 
 

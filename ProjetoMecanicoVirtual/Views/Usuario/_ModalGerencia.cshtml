@@ -1,6 +1,6 @@
 ﻿@model ProjetoMecanicoVirtual.Models.Funcionario
 
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="modalExibir" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -14,8 +14,8 @@
                 <div class="form-group">
                     <label>Ativo</label>
                     <select class="form-control">
-                        @(Model.Ativo == true ? "Sim" : "Não") 
-                        <option>@Model.Ativo</option>
+
+                        <option>@(Model.Ativo == true ? "Sim" : "Não")</option>
                         <option>Sim</option>
                         <option>Não</option>
                     </select>
@@ -40,4 +40,5 @@
             </div>
         </div>
     </div>
+    <div style="height: 100px;"></div>
 </div>

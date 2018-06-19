@@ -71,5 +71,40 @@ namespace ProjetoMecanicoVirtual.DAO
                 }
             }
         }
+
+        public static Funcionario ObterFuncionario(int id)
+        {
+            using (SqlConnection conn = Conexao.AbrirConexao())
+            {
+                using (SqlCommand cmd = new SqlCommand(@"
+                    select id_func, usuario, tipo_user, nome, ativo 
+                    from funcionario
+                    WHERE Id_func = @Id_func
+                    ", conn))
+                {
+
+                    cmd.Parameters.AddWithValue("@Id_func", id);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        Funcionario func = null;
+
+                        if (reader.Read() == true)
+                        {
+                            func = new Funcionario()
+                            {
+                                Id = reader.GetInt32(0),
+                                Usuario = reader.GetString(1),
+                                TipoAcesso = reader.GetString(2),
+                                Nome = reader.GetString(3),
+                                Ativo = reader.GetBoolean(4)
+                            };
+                        }
+
+                        return func;
+                    }
+                }
+            }
+        }
     }
 }

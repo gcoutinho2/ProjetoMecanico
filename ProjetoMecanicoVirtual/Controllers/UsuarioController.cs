@@ -59,5 +59,10 @@ namespace ProjetoMecanicoVirtual.Controllers
             FuncionarioDAO.InsereFuncionario(funcionario);
             return Json("Cadastrado");
         }
+
+        public ActionResult ModalGerencia(int id)
+        {
+            return PartialView("_ModalGerencia", FuncionarioDAO.ObterFuncionario(id));
+        }
     }
 }
