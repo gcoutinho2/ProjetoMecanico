@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Mestre.cshtml";
 
+    List<string> marcas = new List<string>() { "FIAT", "CHEVROLET", "VOLKSWAGEN", "FORD" };
 }
 
 @section Corpo {
@@ -15,14 +16,16 @@
                     <label class="text-base" for="Marca">Marca</label>
                     <select id="Marca" class="form-control" name="Montadora">
                         <option selected="selected" value="">Selecione...</option>
-                        <option value="fiat">FIAT</option>
+                        @foreach (string marca in marcas)
+                        {
+                            <option value="@marca">@marca</option>
+                        }
                     </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label class="text-base" for="Modelo">Modelo</label>
                     <select id="Modelo" class="form-control" name="Modelo">
-                        <option selected="selected" value="">Selecione...</option>
-                        <option value="palio elx">PALIO ELX 1.4</option>
+                        <option selected="selected" value="">Selecione...</option>                         
                     </select>
                 </div>
             </div>
@@ -55,92 +58,92 @@
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="ar">
-                                <input type="checkbox" id="ar" value="filtroAr" /> Filtro de Ar
+                                <input type="checkbox" id="ar"  name="FiltroAr" value="true"/> Filtro de Ar
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="arComb">
-                                <input type="checkbox" id="filComb" value="filtroCombustivel" /> Filtro de Combustível
+                                <input type="checkbox" id="filComb" name="FiltroCombustivel" value="true" /> Filtro de Combustível
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="arCond">
-                                <input type="checkbox" id="arCond" value="filtroArCondicionado" /> Filtro Ar Condicionado
+                                <input type="checkbox" id="arCond" name="FiltroArCondicionado" /> Filtro Ar Condicionado
                             </label>
                         </div>
 
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="oleo">
-                                <input type="checkbox" id="oleo" value="filtroOleo" /> Filtro de Óleo
+                                <input type="checkbox" id="oleo" name="FiltroOleo" /> Filtro de Óleo
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="velas">
-                                <input type="checkbox" id="velas" value="1" name="Velas" /> Velas
+                                <input type="checkbox" id="velas" name="Velas"  /> Velas
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="luzes">
-                                <input type="checkbox" id="luzes" value="luzes" /> Luzes
+                                <input type="checkbox" id="luzes" name="Luzes" /> Luzes
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="freios">
-                                <input type="checkbox" id="freios" value="freios" /> Freios
+                                <input type="checkbox" id="freios" name="PastilhaFreio" /> Freios
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="amortecedor">
-                                <input type="checkbox" id="amortecedor" value="amortecedor" /> Amortecedor
+                                <input type="checkbox" id="amortecedor" name="Amortecedor" /> Amortecedor
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="pneus">
-                                <input type="checkbox" id="pneus" value="penu" /> Pneus
+                                <input type="checkbox" id="pneus" name="Pneu" /> Pneus
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="correiaDentada">
-                                <input type="checkbox" id="correiaDentada" value="correiaDentada" /> Correia Dentada
+                                <input type="checkbox" id="correiaDentada" name="CorreiaDentada" /> Correia Dentada
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="alternador">
-                                <input type="checkbox" id="alternador" value="correiaAlternador" /> Correia do Alternador
+                                <input type="checkbox" id="alternador" name="CorreiaAlternador" /> Correia do Alternador
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="motor">
-                                <input type="checkbox" id="motor" value="fuidoTransmissao" /> Fluído de Transmissão
+                                <input type="checkbox" id="motor" name="FluidoTransmissao" /> Fluído de Transmissão
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="alinhamento">
-                                <input type="checkbox" id="alinhamento" value="alinhamento" /> Alinhamento
+                                <input type="checkbox" id="alinhamento" name="Alinhamento" /> Alinhamento
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="fluidoDire">
-                                <input type="checkbox" id="fluidoDire" value="fuidoDireçao" /> Fluído da Direção
+                                <input type="checkbox" id="fluidoDire" name="FluidoDirecao" /> Fluído da Direção
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="fluidoOleo">
-                                <input type="checkbox" id="fluidoOleo" value="discoFreio" /> Disco de Freio
+                                <input type="checkbox" id="fluidoOleo" name="DiscoFreio" /> Disco de Freio
                             </label>
                         </div>
                     </div>
@@ -160,13 +163,32 @@
 
 
         <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
-
+        @*  *@
     </div>
     <div style="height: 90px;"></div>
 
 
     <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+
+        document.getElementById("Marca").onchange = function () {
+            $.ajax({
+                url: "/veiculo/ObterModelos",
+                method: "get",
+                cache: false,
+                data: { marca: this.value },
+                success: function (dados) {
+                    var html = '<option selected="selected">Selecione...</option>';
+                    for (var i = 0; i < dados.length; i++) {
+                        html += '<option value="' + dados[i] + '">' + dados[i] + '</option>';
+                    }
+                    document.getElementById("Modelo").innerHTML = html;
+                },
+                error: function (x) {
+                    alert(x);
+                }
+            });
+        };
 
         //$(function () {
         //    $("#Marca").ready(function () {
@@ -184,8 +206,16 @@
         //    });
         //});
 
+        $("#ar").click(function (e) {
+            if ($(this).is(':checked')) {
+                true;
+            } else {
+                false;
+            }
+
+        });
+
         function cadastro() {
-            debugger;
             var cadastroVeiculo = {
                 carro : {
                 Montadora: $("#Marca").val(),
@@ -194,22 +224,22 @@
                 Ano: $("#inputAno").val(),
                 Km: $("#inputKm").val()
             },
-            revisoes : {
+                revisoes: {                
                 Data: $("#inputDataRevisao").val(),
                 FiltroAr: $("#ar").val(),
-                FiltroDeCombustivel: $("#filComb").val(),
+                FiltroCombustivel: $("#filComb").val(),
                 FiltroArCondicionado: $("#arCond").val(),
-                FiltroDeOleo: $("#oleo").val(),
+                FiltroOleo: $("#oleo").val(),
                 Velas: $("#velas").val(),
-                Luzes: $("#luzes").val(),
-                Freios: $("#freios").val(),
+                Luzes: $("#luzes").val(), 
+                PastilhaFreio: $("#freios").val(),
                 Amortecedor: $("#amortecedor").val(),
-                Pneus: $("#pneus").val(),
+                Pneu: $("#pneus").val(),
                 CorreiaDentada: $("#correiaDentada").val(),
                 CorreiaAlternador: $("#motor").val(),
                 Alinhamento: $("#alinhamento").val(),
-                FluidoDaDireção: $("#fluidoDIre").val(),
-                FluidoDoOleo: $("#fluidoOleo").val()
+                FluidoDirecao: $("#fluidoDIre").val(),
+                DiscoFreio: $("#fluidoOleo").val()
             }
         }
 
@@ -217,7 +247,7 @@
             url: "@Url.Action("CadastroNovoVeiculo", "Veiculo")",
             cache: false,
             method: "post",
-            datatype: "json",
+            datatype: "json",            
             data: cadastroVeiculo,
             success: function (dados) {
 

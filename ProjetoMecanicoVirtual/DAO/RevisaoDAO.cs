@@ -17,10 +17,10 @@ namespace ProjetoMecanicoVirtual.DAO
 
                 using (SqlCommand cmd = new SqlCommand(@"INSERT INTO REVISAO (Filtro_oleo, freio, Velas, 
                             Filtro_combustivel, Data, Correia_dentada, Filtro_ar,Correia_alternador,
-                            Filtro_ar, Amortecedor, Pneu, Fluido_direcao, Alinhamento)
+                            Filtro_ar, Amortecedor, Pneu, Fluido_direcao, Alinhamento, Luzes)
                             values (@filtro_oleo, @freio, @velas,@filtro_comvutivel, @data, @correia_dentada,
                             @filtro_ar,@correia_alternador,@filtro_ar, @amortecedor, @pneu, 
-                            @fluido_transmissao, @disco_freio, @fluido_direcao,@alinhamento", conn))
+                            @fluido_transmissao, @disco_freio, @fluido_direcao,@alinhamento,@luzes", conn))
                 {
                     cmd.Parameters.AddWithValue("@filtro_oleo", revisoes.FiltroOleo);
                     cmd.Parameters.AddWithValue("@freio",revisoes.PastilhaFreio);
@@ -36,6 +36,8 @@ namespace ProjetoMecanicoVirtual.DAO
                     cmd.Parameters.AddWithValue("@pneu", revisoes.Pneu);
                     cmd.Parameters.AddWithValue("@fluido_direcao", revisoes.FluidoDirecao); //Esta cadastrado no banco MOTOR
                     cmd.Parameters.AddWithValue("@alinhamento", revisoes.Alinhamento);
+                    cmd.Parameters.AddWithValue("@luzes", revisoes.Luzes);
+                    
                     
                 }
 

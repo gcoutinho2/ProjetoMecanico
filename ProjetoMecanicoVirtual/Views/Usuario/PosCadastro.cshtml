@@ -5,21 +5,21 @@
 
 @section Corpo {
     <div class="container-fluid">
-       
+
         <h1>Atualização de Cadastro</h1>
         <hr>
         <p>Parabéns! Você já criou o seu pré cadastro, vamos atualizar mais alguns dados.</p>
 
-        <form>
+        <form id="posCad">
             <!-- Nome, sobrenome-->
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputNome">Nome</label>
-                    <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+                    <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="Nome">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputSobrenome">Sobrenome</label>
-                    <input type="text" class="form-control" id="inputSobrenome" placeholder="Sobrenome">
+                    <input type="text" class="form-control" id="inputSobrenome" placeholder="Sobrenome" name="Sobrenome">
                 </div>
             </div>
 
@@ -27,11 +27,11 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputRg">RG</label>
-                    <input type="text" class="form-control" id="inputRg" placeholder="Digite o número do RG">
+                    <input type="text" class="form-control" id="inputRg" placeholder="Digite o número do RG" name="Rg">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputCpf">CPF</label>
-                    <input type="text" class="form-control" id="inputCpf" placeholder="Digite o número do CPF">
+                    <input type="text" class="form-control" id="inputCpf" placeholder="Digite o número do CPF" name="Cpf">
                 </div>
             </div>
 
@@ -39,7 +39,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputData">Data de Nascimento</label>
-                    <input class="form-control" type="date" id="inputData">
+                    <input class="form-control" type="date" id="inputData" name="DtaNascimento">
                 </div>
                 <div class="form-group col-md-6">
                     <label class="text-base" for="Gender">Sexo</label>
@@ -56,20 +56,20 @@
             <div class="form-row">
                 <div class="form-group col-md-2">
                     <label for="inputCep">CEP</label>
-                    <input type="text" class="form-control" id="inputCep">
-             
+                    <input type="text" class="form-control" id="inputCep" name="Cep">
+
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputEnd">Endereço</label>
-                    <input type="text" class="form-control" id="inputEnd">
+                    <input type="text" class="form-control" id="inputEnd" name="Rua">
                 </div>
                 <div class="form-group col-md-1">
                     <label for="inputNum">Número</label>
-                    <input type="text" class="form-control" id="inputNum">
+                    <input type="text" class="form-control" id="inputNum" name="Numero">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputBairro">Bairro</label>
-                    <input type="text" class="form-control" id="inputBairro">
+                    <input type="text" class="form-control" id="inputBairro" name="Bairro">
                 </div>
             </div>
 
@@ -77,11 +77,11 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputCity">Cidade</label>
-                    <input type="text" class="form-control" id="inputCity">
+                    <input type="text" class="form-control" id="inputCity" name="Cidade">
                 </div>
                 <div class="form-group col-md-2">
                     <label for="inputState">Estado</label>
-                    <select id="inputState" class="form-control">
+                    <select id="inputState" class="form-control" name="Estado">
                         <option selected>Selecione...</option>
                         <option value="AC">AC</option>
                         <option value="AL">AL</option>
@@ -115,7 +115,7 @@
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputPais">País</label>
-                    <select id="inputPais" class="form-control">
+                    <select id="inputPais" class="form-control" name="Pais">
                         <option selected>Selecione...</option>
                         <option value="AF">Afeganistão</option>
                         <option value="ZA">África do Sul</option>
@@ -396,12 +396,15 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmailAlt">E-mail alternativo</label>
-                    <input type="email" class="form-control" id="inputEmailAlt" placeholder="E-mail Alternativo">
+                    <input type="email" class="form-control" id="inputEmailAlt" placeholder="E-mail Alternativo" name="EmailAlternativo">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputEmailAlt2">Digite o E-mail novamente</label>
-                    <input type="email" class="form-control" id="inputEmailAlt2" placeholder="Digite novamente o E-mail">
+                    <input type="email" class="form-control" id="inputEmailAlt2" placeholder="Digite novamente o E-mail" name="EmailAlt">
                 </div>
+            </div>
+            <div>
+                <input type="hidden" id="inputId" name="Id" />
             </div>
 
             <!-- Botão enviar-->
@@ -418,33 +421,115 @@
         <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
         <div style="height: 150px;"></div>
     </div>
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Dados Gravados</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                </div>
-                <div class="modal-body">
-                    <p>Cadastro Atualizado com Sucesso</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
+   
+    <script type="text/javascript" src="~/assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.validate.min.js"></script>
     <script type="text/javascript">
+         $("#posCad").validate({
+        rules: {
+            Nome: {
+                required: true,
+                minlength: 3
+            },
 
-        function ConfirmarCadastro() {
+            Sobrenome: {
+                required: true,
+                minlength: 3
+            },
 
-            
+            Rg: {
+                required: true
+            },
+
+            Cpf: {
+                required: true
+            },
+
+            DtaNascimento: {
+                required: true,
+                date: true
+            },
+
+            Cep: {
+                required: true
+            },
+
+            Rua: {
+                required: true,
+                minlength: 5
+            },
+            Numero: {
+                required: true
+            },
+            Bairro: {
+                required: true,
+                minlength: 5
+            },
+            Cidade: {
+                required: true,
+            },
+            Estado: {
+                required: true,
+            },
+            Pais: {
+                required: true,
+            },
+            EmailAlternativo: {
+                required: true,
+                email: true
+            },
+            EmailAlt: {
+                required: true,
+                email : true
+            },
+        },
+
+        submitHandler: function (form) {
+
+            if ($("#inputEmailAlt").val() != $("#inputEmailAlt2").val()) {
+                alert("E-mails não estão iguais");
+            }
+            var cadastro = {
+                usuario: {
+                    Nome: $("#inputNome").val(),
+                    Sobrenome: $("#inputSobrenome").val(),
+                    Rg: $("#inputRg").val(),
+                    DtaNascimento: $("#inputData").val(),
+                    Sexo: $("#Gender").val(),
+                    EmailAlternativo: $("#inputEmailAlt").val()
+                },
+
+                end: {
+                    Rua: $("#inputEnd").val(),
+                    Numero: $("#inputNum").val(),
+                    Bairro: $("#inputBairro").val(),
+                    Cep: $("#inputCep").val(),
+                    Cidade: $("#inputCity").val(),
+                    Estado: $("#inputState").val(),
+                    Pais: $("#inputPais").val()
+                },
+            }
+
+            $.ajax({
+                url: "@Url.Action("TestandoUpdate", "Usuario")",
+                cache: false,
+                method: "post",
+                datatype: "json",
+                data: cadastro,
+                success: function (dados) {
+
+                    alert("Sucesso");
+                },
+                error: function () {
+                    alert("Houve um herro ao salvas os cadastros");
+                }
+            });
+        }
+         });
+        @*function ConfirmarCadastro() {
+
+
             var cadastro = {
                     usuario:{
                     Nome: $("#inputNome").val(),
@@ -502,7 +587,7 @@
                     alert("Houve um herro ao salvas os cadastros");
                 }
             });
-        };
+            };*@
 
     </script>
 
