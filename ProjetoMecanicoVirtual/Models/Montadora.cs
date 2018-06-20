@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ProjetoMecanicoVirtual.Models
 {
-    public class Marca
+    public class Montadora
     {
         public int Id { get; set; }
 

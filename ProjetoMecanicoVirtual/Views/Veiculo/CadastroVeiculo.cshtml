@@ -25,7 +25,7 @@
                 <div class="form-group col-md-6">
                     <label class="text-base" for="Modelo">Modelo</label>
                     <select id="Modelo" class="form-control" name="Modelo">
-                        <option selected="selected" value="">Selecione...</option>                         
+                        <option selected="selected" value="">Selecione...</option>
                     </select>
                 </div>
             </div>
@@ -58,92 +58,92 @@
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="ar">
-                                <input type="checkbox" id="ar"  name="FiltroAr" value="true"/> Filtro de Ar
+                                <input type="checkbox" id="ar" name="FiltroAr" value="" /> Filtro de Ar
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="arComb">
-                                <input type="checkbox" id="filComb" name="FiltroCombustivel" value="true" /> Filtro de Combustível
+                                <input type="checkbox" id="filComb" name="FiltroCombustivel" value="" /> Filtro de Combustível
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="arCond">
-                                <input type="checkbox" id="arCond" name="FiltroArCondicionado" /> Filtro Ar Condicionado
+                                <input type="checkbox" id="arCond" name="FiltroArCondicionado" value="" /> Filtro Ar Condicionado
                             </label>
                         </div>
 
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="oleo">
-                                <input type="checkbox" id="oleo" name="FiltroOleo" /> Filtro de Óleo
+                                <input type="checkbox" id="oleo" name="FiltroOleo" value="" /> Filtro de Óleo
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="velas">
-                                <input type="checkbox" id="velas" name="Velas"  /> Velas
+                                <input type="checkbox" id="velas" name="Velas" value="" /> Velas
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="luzes">
-                                <input type="checkbox" id="luzes" name="Luzes" /> Luzes
+                                <input type="checkbox" id="luzes" name="Luzes" value="" /> Luzes
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="freios">
-                                <input type="checkbox" id="freios" name="PastilhaFreio" /> Freios
+                                <input type="checkbox" id="freios" name="PastilhaFreio" value="" /> Freios
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="amortecedor">
-                                <input type="checkbox" id="amortecedor" name="Amortecedor" /> Amortecedor
+                                <input type="checkbox" id="amortecedor" name="Amortecedor" value="" /> Amortecedor
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="pneus">
-                                <input type="checkbox" id="pneus" name="Pneu" /> Pneus
+                                <input type="checkbox" id="pneus" name="Pneu" value="" /> Pneus
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="correiaDentada">
-                                <input type="checkbox" id="correiaDentada" name="CorreiaDentada" /> Correia Dentada
+                                <input type="checkbox" id="correiaDentada" name="CorreiaDentada" value="" /> Correia Dentada
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="alternador">
-                                <input type="checkbox" id="alternador" name="CorreiaAlternador" /> Correia do Alternador
+                                <input type="checkbox" id="alternador" name="CorreiaAlternador" value="" /> Correia do Alternador
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="motor">
-                                <input type="checkbox" id="motor" name="FluidoTransmissao" /> Fluído de Transmissão
+                                <input type="checkbox" id="motor" name="FluidoTransmissao" value="" /> Fluído de Transmissão
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="alinhamento">
-                                <input type="checkbox" id="alinhamento" name="Alinhamento" /> Alinhamento
+                                <input type="checkbox" id="alinhamento" name="Alinhamento" value="" /> Alinhamento
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="fluidoDire">
-                                <input type="checkbox" id="fluidoDire" name="FluidoDirecao" /> Fluído da Direção
+                                <input type="checkbox" id="fluidoDire" name="FluidoDirecao" value="" /> Fluído da Direção
                             </label>
                         </div>
 
                         <div class="col-xs-6 col-sm-4">
                             <label for="fluidoOleo">
-                                <input type="checkbox" id="fluidoOleo" name="DiscoFreio" /> Disco de Freio
+                                <input type="checkbox" id="fluidoOleo" name="DiscoFreio" value="" /> Disco de Freio
                             </label>
                         </div>
                     </div>
@@ -170,6 +170,62 @@
 
     <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+
+        if ($("#ar").is(':checked')) {
+	        $("#ar").val(true);
+        }
+
+        if($("#arCond").is(':checked')) {
+            $("#arCond").val(true);
+        }
+
+        if($("#oleo").is(':checked')) {
+            $("#oleo").val(true);
+        }
+
+        if($("#velas").is(':checked')) {
+            $("#velas").val(true);
+        }
+
+        if($("#luzes").is(':checked')) {
+            $("#luzes").val(true);
+        }
+
+        if($("#freios").is(':checked')) {
+            $("#freios").val(true);
+        }
+
+        if($("#amortecedor").is(':checked')) {
+            $("#amortecedor").val(true);
+        }
+
+        if($("#pneus").is(':checked')) {
+            $("#pneus").val(true);
+        }
+
+        if($("#correiaDentada").is(':checked')) {
+            $("#correiaDentada").val(true);
+        }
+
+        if($("#alternador").is(':checked')) {
+            $("#alternador").val(true);
+        }
+
+        if($("#motor").is(':checked')) {
+            $("#motor").val(true);
+        }
+
+        if($("#alinhamento").is(':checked')) {
+            $("#alinhamento").val(true);
+        }
+
+        if($("#fluidoDire").is(':checked')) {
+            $("#fluidoDire").val(true);
+        }
+
+        if($("#fluidoOleo").is(':checked')) {
+            $("#fluidoOleo").val(true);
+        }
 
         document.getElementById("Marca").onchange = function () {
             $.ajax({
@@ -218,36 +274,43 @@
         function cadastro() {
             var cadastroVeiculo = {
                 carro : {
-                Montadora: $("#Marca").val(),
-                Modelo: $("#Modelo").val(),
-                Cor: $("#inputCor").val(),
-                Ano: $("#inputAno").val(),
-                Km: $("#inputKm").val()
-            },
-                revisoes: {                
-                Data: $("#inputDataRevisao").val(),
-                FiltroAr: $("#ar").val(),
-                FiltroCombustivel: $("#filComb").val(),
-                FiltroArCondicionado: $("#arCond").val(),
-                FiltroOleo: $("#oleo").val(),
-                Velas: $("#velas").val(),
-                Luzes: $("#luzes").val(), 
-                PastilhaFreio: $("#freios").val(),
-                Amortecedor: $("#amortecedor").val(),
-                Pneu: $("#pneus").val(),
-                CorreiaDentada: $("#correiaDentada").val(),
-                CorreiaAlternador: $("#motor").val(),
-                Alinhamento: $("#alinhamento").val(),
-                FluidoDirecao: $("#fluidoDIre").val(),
-                DiscoFreio: $("#fluidoOleo").val()
+                    Cor: $("#inputCor").val(),
+                    Ano: $("#inputAno").val(),
+                    Km: $("#inputKm").val()
+                },
+
+                motadora : {
+                    Montadora: $("#Marca").val(),
+                },
+
+                marca : {
+                    Modelo: $("#Modelo").val(),
+                },
+
+                revisoes: {
+                    Data: $("#inputDataRevisao").val(),
+                    FiltroAr: $("#ar").val(),
+                    FiltroCombustivel: $("#filComb").val(),
+                    FiltroArCondicionado: $("#arCond").val(),
+                    FiltroOleo: $("#oleo").val(),
+                    Velas: $("#velas").val(),
+                    Luzes: $("#luzes").val(),
+                    PastilhaFreio: $("#freios").val(),
+                    Amortecedor: $("#amortecedor").val(),
+                    Pneu: $("#pneus").val(),
+                    CorreiaDentada: $("#correiaDentada").val(),
+                    CorreiaAlternador: $("#motor").val(),
+                    Alinhamento: $("#alinhamento").val(),
+                    FluidoDirecao: $("#fluidoDIre").val(),
+                    DiscoFreio: $("#fluidoOleo").val()
+                }
             }
-        }
 
         $.ajax({
             url: "@Url.Action("CadastroNovoVeiculo", "Veiculo")",
             cache: false,
             method: "post",
-            datatype: "json",            
+            datatype: "json",
             data: cadastroVeiculo,
             success: function (dados) {
 
