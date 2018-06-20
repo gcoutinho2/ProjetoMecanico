@@ -7,15 +7,15 @@ using System.Web;
 
 namespace MecanicoVirtual.DAO
 {
-    public class MarcaDAO
+    public class MontadoraDAO
     {
-        public void InserirMarca(Marca marca)
+        public void InserirMontadora(Montadora montadora)
         {
             using (SqlConnection conn = Conexao.AbrirConexao())
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO MONTADORA (modelo) VALUES (@modelo)", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO MONTADORA (nome) VALUES (@nome)", conn))
                 {
-                    cmd.Parameters.AddWithValue("@modelo", marca.Nome);
+                    cmd.Parameters.AddWithValue("@nome", montadora.Nome);
 
                     cmd.ExecuteNonQuery();
                 }

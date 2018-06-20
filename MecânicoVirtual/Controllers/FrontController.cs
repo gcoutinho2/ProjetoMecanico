@@ -6,7 +6,7 @@ using System.Web;
 using System.Linq;
 using System.Data;
 using System.Drawing;
-
+using MecanicoVirtual.DAO;
 
 namespace ProjetoCRUD
 {
@@ -141,6 +141,14 @@ namespace ProjetoCRUD
             return PartialView("_Excluir", user);
         }
 
+        public ActionResult Login(Usuario usuario)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
 
+            dao.Login(usuario);
+
+            return PartialView("_Cadastro");
+            //return RedirectToAction("PosCadastro", "Usuario", usuario);
+        }
     }
 }

@@ -61,5 +61,19 @@ namespace MecanicoVirtual.Controllers
 
             return Json(modelos, JsonRequestBehavior.AllowGet);
         }
+        public ActionResult CadastroNovoVeiculo(Carro carro, Revisoes revisoes, Marca marca, Montadora motadora)
+        {
+            CarroDAO carroDAO = new CarroDAO();
+            RevisaoDAO revisaoDAO = new RevisaoDAO();
+            MontadoraDAO montadora = new MontadoraDAO();
+            MarcaDAO marcaDAO = new MarcaDAO();
+
+            carroDAO.InserirCarro(carro);
+            revisaoDAO.CadastrarRevisao(revisoes);
+            montadora.InserirMontadora(motadora);
+            marcaDAO.InserirMarca(marca);
+
+            return Json(true, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -262,6 +262,7 @@
     <Compile Include="DAO\FuncionarioDAO.cs" />
     <Compile Include="DAO\MarcaDAO.cs" />
     <Compile Include="DAO\MensagemDAO.cs" />
+    <Compile Include="DAO\MontadoraDAO.cs" />
     <Compile Include="DAO\RevisaoDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
@@ -273,6 +274,7 @@
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Mensagem.cs" />
+    <Compile Include="Models\Montadora.cs" />
     <Compile Include="Models\Revisoes.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

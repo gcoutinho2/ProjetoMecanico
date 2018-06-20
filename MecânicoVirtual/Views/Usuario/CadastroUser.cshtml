@@ -1,5 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Mestre.cshtml";
+
 }
 @section Corpo {
 
@@ -49,9 +50,7 @@
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <button class="btn" type="submit"> Criar Usuario</button>
-                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit"> Criar Usuario</button>
             </div>
 
 
@@ -72,16 +71,20 @@
                 required: true,
                 minlength: 3
             },
+
             Email: {
                 required: true,
                 email: true
             },
+
             Login: {
                 required: true
             },
+
             TipoAcesso: {
                 required: true
             },
+
             Senha: {
                 required: true
             },
@@ -102,6 +105,7 @@
                 TipoAcesso: $("#tipoAcesso").val(),
                 Senha: $("#inputSenha").val(),
             };
+            debugger;
 
             $.ajax({
                 url: "@Url.Action("InsereFuncionario", "Usuario")",
@@ -116,7 +120,9 @@
                     alert("Erro");
                 }
             });
+
         }
     });
+
     </script>
 }

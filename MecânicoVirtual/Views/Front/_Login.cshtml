@@ -29,9 +29,8 @@
     </div>
 </div>
 <script type="text/javascript">
-    $("#formCriar").validate({
+     $("#formCriar").validate({
         rules: {
-            
             Login: {
                 required: true
             },
@@ -47,10 +46,10 @@
             }
 
             $.ajax({
-                },
-                error: function () {
-                  
-                }
+                url: "@Url.Action("Login","Front")",
+                cache: false,
+                method: "post",
+                data: usuario
             });
         }
     });

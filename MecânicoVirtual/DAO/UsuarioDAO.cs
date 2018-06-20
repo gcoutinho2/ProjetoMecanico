@@ -149,5 +149,19 @@ namespace MecanicoVirtual.DAO
                 }
             }
         }
+
+        public void Login(Usuario usuario)
+        {
+            using (SqlConnection conn = Conexao.AbrirConexao())
+            {
+                using (SqlCommand cmd = new SqlCommand("Select usuario , senha from cliente where usuario = @usuario and senha = @senha", conn))
+                {
+                    cmd.Parameters.AddWithValue("@usuario", usuario.Login);
+                    cmd.Parameters.AddWithValue("@senha", usuario.Senha);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
