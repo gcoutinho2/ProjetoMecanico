@@ -132,7 +132,23 @@ namespace ProjetoMecanicoVirtual.DAO
             }
         }
 
+        public void AlterarFuncionario(Funcionario funcionario)
+        {
+            using (SqlConnection conn = Conexao.AbrirConexao())
+            {
+                using (SqlCommand cmd = new SqlCommand(@"Update FUNCIONARIO  TIPO_USER = @TIPO_USER, ATIVO = @ATIVO,
+                                                       SENHA = @SENHA where ID_FUNC = @ID_FUNC ", conn))
+                {
 
+                    cmd.Parameters.AddWithValue("@TIPO_USER", funcionario.TipoAcesso);
+                    cmd.Parameters.AddWithValue("@ATIVO", funcionario.Ativo);
+                    cmd.Parameters.AddWithValue("@SENHA", funcionario.Senha);
+                    cmd.Parameters.AddWithValue("@ID_FUNC", funcionario.Id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
 
 
 
