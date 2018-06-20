@@ -9,12 +9,12 @@
 
         <h1>Cadastrar Informações do Veículo</h1>
         <hr>
-        <form>
+        <form id="formCadastro">
             <!-- Marca e Modelo-->
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label class="text-base" for="Marca">Marca</label>
-                    <select id="Marca" class="form-control" name="Montadora">
+                    <select id="Marca" class="form-control" name="Marca">
                         <option selected="selected" value="">Selecione...</option>
                         @foreach (string marca in marcas)
                         {
@@ -34,19 +34,19 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputCor">Cor</label>
-                    <input type="text" class="form-control" id="inputCor">
+                    <input type="text" class="form-control" id="inputCor" name="Cor">
                 </div>
                 <div class="form-group col-md-1">
                     <label for="inputAno">Ano</label>
-                    <input type="text" class="form-control" id="inputAno">
+                    <input type="text" class="form-control" id="inputAno" name="Ano">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputKm">KM do veículo</label>
-                    <input type="text" class="form-control" id="inputKm">
+                    <input type="text" class="form-control" id="inputKm" name="Km">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputDataRevisao">Data da última revisão</label>
-                    <input class="form-control" type="date" id="inputDataRevisao">
+                    <input class="form-control" type="date" id="inputDataRevisao" name="DtRev">
                 </div>
             </div>
 
@@ -154,7 +154,7 @@
             <!-- Botão enviar-->
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <button type="button" id="cadVeiculo" class="btn btn-lg btn-primary btn-block btn-signin" onclick="cadastro()">Cadastrar</button>
+                    <button type="submit" id="cadVeiculo" class="btn btn-lg btn-primary btn-block btn-signin" >Cadastrar</button>
                 </div>
 
             </div>
@@ -169,62 +169,67 @@
 
 
     <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.validate.min.js"></script>
     <script type="text/javascript">
 
         if ($("#ar").is(':checked')) {
-	        $("#ar").val(true);
+            $("#ar").val(1);
         }
 
-        if($("#arCond").is(':checked')) {
-            $("#arCond").val(true);
+        if ($("#filComb").is(':checked')) {
+            $("#filComb").val(1);
         }
 
-        if($("#oleo").is(':checked')) {
-            $("#oleo").val(true);
+        if ($("#arCond").is(':checked')) {
+            $("#arCond").val(1);
         }
 
-        if($("#velas").is(':checked')) {
-            $("#velas").val(true);
+        if ($("#oleo").is(':checked')) {
+            $("#oleo").val(1);
         }
 
-        if($("#luzes").is(':checked')) {
-            $("#luzes").val(true);
+        if ($("#velas").is(':checked')) {
+            $("#velas").val(1);
         }
 
-        if($("#freios").is(':checked')) {
-            $("#freios").val(true);
+        if ($("#luzes").is(':checked')) {
+            $("#luzes").val(1);
         }
 
-        if($("#amortecedor").is(':checked')) {
-            $("#amortecedor").val(true);
+        if ($("#freios").is(':checked')) {
+            $("#freios").val(1);
         }
 
-        if($("#pneus").is(':checked')) {
-            $("#pneus").val(true);
+        if ($("#amortecedor").is(':checked')) {
+            $("#amortecedor").val(1);
         }
 
-        if($("#correiaDentada").is(':checked')) {
-            $("#correiaDentada").val(true);
+        if ($("#pneus").is(':checked')) {
+            $("#pneus").val(1);
         }
 
-        if($("#alternador").is(':checked')) {
-            $("#alternador").val(true);
+        if ($("#correiaDentada").is(':checked')) {
+            $("#correiaDentada").val(1);
         }
 
-        if($("#motor").is(':checked')) {
-            $("#motor").val(true);
+        if ($("#alternador").is(':checked')) {
+            $("#alternador").val(1);
         }
 
-        if($("#alinhamento").is(':checked')) {
-            $("#alinhamento").val(true);
+        if ($("#motor").is(':checked')) {
+            $("#motor").val(1);
         }
 
-        if($("#fluidoDire").is(':checked')) {
-            $("#fluidoDire").val(true);
+        if ($("#alinhamento").is(':checked')) {
+            $("#alinhamento").val(1);
         }
 
-        if($("#fluidoOleo").is(':checked')) {
-            $("#fluidoOleo").val(true);
+        if ($("#fluidoDire").is(':checked')) {
+            $("#fluidoDire").val(1);
+        }
+
+        if ($("#fluidoOleo").is(':checked')) {
+            $("#fluidoOleo").val(1);
         }
 
         document.getElementById("Marca").onchange = function () {
@@ -245,83 +250,96 @@
                 }
             });
         };
+            
 
-        //$(function () {
-        //    $("#Marca").ready(function () {
-        //        $("Modelo").change(function () {
-        //            $("Modelo").html('<option value=""></option>');
-        //        var texto = $(this).val();
-
-        //        if (texto === "fiat") {
-        //            var option = document.createElement("option");
-        //            option.appendChild("Palio");
-        //        }
-         
-        
-        //        });
-        //    });
-        //});
-
-        $("#ar").click(function (e) {
-            if ($(this).is(':checked')) {
-                true;
-            } else {
-                false;
-            }
-
-        });
-
-        function cadastro() {
-            var cadastroVeiculo = {
-                carro : {
-                    Cor: $("#inputCor").val(),
-                    Ano: $("#inputAno").val(),
-                    Km: $("#inputKm").val()
+        $("#formCadastro").validate({
+            rules: {
+                Marca: {
+                    required: true
                 },
 
-                motadora : {
-                    Montadora: $("#Marca").val(),
+                Modelo: {
+                    required: true
                 },
 
-                marca : {
-                    Modelo: $("#Modelo").val(),
+                Cor: {
+                    required: true,
                 },
 
-                revisoes: {
-                    Data: $("#inputDataRevisao").val(),
-                    FiltroAr: $("#ar").val(),
-                    FiltroCombustivel: $("#filComb").val(),
-                    FiltroArCondicionado: $("#arCond").val(),
-                    FiltroOleo: $("#oleo").val(),
-                    Velas: $("#velas").val(),
-                    Luzes: $("#luzes").val(),
-                    PastilhaFreio: $("#freios").val(),
-                    Amortecedor: $("#amortecedor").val(),
-                    Pneu: $("#pneus").val(),
-                    CorreiaDentada: $("#correiaDentada").val(),
-                    CorreiaAlternador: $("#motor").val(),
-                    Alinhamento: $("#alinhamento").val(),
-                    FluidoDirecao: $("#fluidoDIre").val(),
-                    DiscoFreio: $("#fluidoOleo").val()
+                Ano: {
+                    required: true
+                },
+
+                Km: {
+                    required: true
+                },
+
+                DtRev: {
+                    required: true,
                 }
-            }
-
-        $.ajax({
-            url: "@Url.Action("CadastroNovoVeiculo", "Veiculo")",
-            cache: false,
-            method: "post",
-            datatype: "json",
-            data: cadastroVeiculo,
-            success: function (dados) {
-
-                alert("Sucesso");
             },
-            error: function () {
-                alert("Houve um herro ao salvas os cadastros");
+
+            submitHandler: function (form) {
+
+                var cadastroVeiculo = {
+                    carro: {
+                        Cor: $("#inputCor").val(),
+                        Ano: $("#inputAno").val(),
+                        Km: $("#inputKm").val()
+                    },
+
+                    montadora: {
+                        Nome: $("#Marca").val()
+                    },
+
+                    marca: {
+                        Nome: $("#Modelo").val()
+                    },
+
+                    revisoes: {
+                        Data: $("#inputDataRevisao").val(),
+                        FiltroAr: $("#ar").val(),
+                        FiltroCombustivel: $("#filComb").val(),
+                        FiltroArCondicionado: $("#arCond").val(),
+                        FiltroOleo: $("#oleo").val(),
+                        Velas: $("#velas").val(),
+                        Luzes: $("#luzes").val(),
+                        PastilhaFreio: $("#freios").val(),
+                        Amortecedor: $("#amortecedor").val(),
+                        Pneu: $("#pneus").val(),
+                        CorreiaDentada: $("#correiaDentada").val(),
+                        CorreiaAlternador: $("#motor").val(),
+                        Alinhamento: $("#alinhamento").val(),
+                        FluidoDirecao: $("#fluidoDIre").val(),
+                        DiscoFreio: $("#fluidoOleo").val()
+                    }
+                }
+
+                $.ajax({
+                    url: "@Url.Action("CadastroNovoVeiculo", "Veiculo")",
+                    cache: false,
+                    method: "post",
+                    datatype: "json",
+                    data: cadastroVeiculo,
+                    success: function (dados) {
+
+                        alert("Sucesso");
+                    },
+                    error: function () {
+                        alert("Houve um herro ao salvas os cadastros");
+                    }
+                });
             }
         });
-    }
+                                
+        
+       
 
+
+        //function cadastro() {
+            
+
+        //}
     </script>
 }
 

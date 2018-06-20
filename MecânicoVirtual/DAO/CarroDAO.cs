@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
-using MecanicoVirtual.Models;
+using ProjetoMecanicoVirtual.Models;
 
-namespace MecanicoVirtual.DAO
+namespace ProjetoMecanicoVirtual.DAO
 {
     public class CarroDAO
     {
@@ -9,14 +9,14 @@ namespace MecanicoVirtual.DAO
         {
             using (SqlConnection conn = Conexao.AbrirConexao())
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Carro (modelo, ano, km, cor, montadora) VALUES (@modelo, @ano, @km, @cor, @montadora)", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Carro (ano, km, cor) VALUES ( @ano, @km, @cor)", conn))
                 {
-                    cmd.Parameters.AddWithValue("@modelo", carro.Modelo);
+                    //cmd.Parameters.AddWithValue("@modelo", carro.Modelo);
                     cmd.Parameters.AddWithValue("@ano", carro.Ano);
                     cmd.Parameters.AddWithValue("@km", carro.Km);
                     cmd.Parameters.AddWithValue("@cor", carro.Cor);
-                    cmd.Parameters.AddWithValue("@montadora", carro.Montadora);
-
+                    //cmd.Parameters.AddWithValue("@montadora", carro.Montadora);
+                    
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -48,8 +48,8 @@ namespace MecanicoVirtual.DAO
                                 Ano = reader.GetInt32(0),
                                 Km = reader.GetDouble(1),
                                 Cor = reader.GetString(2),
-                                Modelo = reader.GetString(3),
-                                Montadora = reader.GetString(4)
+                                //Modelo = reader.GetString(3),
+                                //Montadora = reader.GetString(4)
                             };
 
                         }
@@ -69,12 +69,12 @@ namespace MecanicoVirtual.DAO
             {
                 using (SqlCommand cmd = new SqlCommand("UPDATE Carro SET Modelo = @modelo, Ano = @ano, Km = @km, Cor = @cor, Montadora = @montadora WHERE Id = @id", conn))
                 {
-                    cmd.Parameters.AddWithValue("@usuario", carro.Modelo);
+                    //cmd.Parameters.AddWithValue("@usuario", carro.Modelo);
                     cmd.Parameters.AddWithValue("@email", carro.Ano);
                     cmd.Parameters.AddWithValue("@senha", carro.Km);
                     cmd.Parameters.AddWithValue("@confirma_senha", carro.Cor);
-                    cmd.Parameters.AddWithValue("@confirma_senha", carro.Montadora);
-
+                    //cmd.Parameters.AddWithValue("@confirma_senha", carro.Montadora);
+                    
                     cmd.ExecuteNonQuery();
                 }
             }

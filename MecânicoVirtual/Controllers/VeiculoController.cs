@@ -1,12 +1,12 @@
-﻿using MecanicoVirtual.DAO;
-using MecanicoVirtual.Models;
+﻿using ProjetoMecanicoVirtual.DAO;
+using ProjetoMecanicoVirtual.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MecanicoVirtual.Controllers
+namespace ProjetoMecanicoVirtual.Controllers
 {
     public class VeiculoController : Controller
     {
@@ -28,13 +28,18 @@ namespace MecanicoVirtual.Controllers
             return Json(true);
         }
 
-        public ActionResult CadastroNovoVeiculo(Carro carro, Revisoes revisoes)
+        public ActionResult CadastroNovoVeiculo(Carro carro, Revisoes revisoes, Marca marca, Montadora motadora)
         {
             CarroDAO carroDAO = new CarroDAO();
             RevisaoDAO revisaoDAO = new RevisaoDAO();
+            MontadoraDAO montadora = new MontadoraDAO();
+            MarcaDAO marcaDAO = new MarcaDAO();
 
             carroDAO.InserirCarro(carro);
             revisaoDAO.CadastrarRevisao(revisoes);
+            marcaDAO.InserirMarca(marca);
+            //montadora.InserirMontadora(motadora);
+            
 
             return Json(true, JsonRequestBehavior.AllowGet);
         }
@@ -61,19 +66,6 @@ namespace MecanicoVirtual.Controllers
 
             return Json(modelos, JsonRequestBehavior.AllowGet);
         }
-        public ActionResult CadastroNovoVeiculo(Carro carro, Revisoes revisoes, Marca marca, Montadora motadora)
-        {
-            CarroDAO carroDAO = new CarroDAO();
-            RevisaoDAO revisaoDAO = new RevisaoDAO();
-            MontadoraDAO montadora = new MontadoraDAO();
-            MarcaDAO marcaDAO = new MarcaDAO();
 
-            carroDAO.InserirCarro(carro);
-            revisaoDAO.CadastrarRevisao(revisoes);
-            montadora.InserirMontadora(motadora);
-            marcaDAO.InserirMarca(marca);
-
-            return Json(true, JsonRequestBehavior.AllowGet);
-        }
     }
 }
