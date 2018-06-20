@@ -1,0 +1,261 @@
+﻿@{
+    Layout = "~/Views/Shared/_Mestre.cshtml";
+
+    List<string> marcas = new List<string>() { "FIAT", "CHEVROLET", "VOLKSWAGEN", "FORD" };
+}
+@section Corpo {
+    <div class="container-fluid">
+
+        <h1>Cadastrar Informações do Veículo</h1>
+        <hr>
+        <form>
+            <!-- Marca e Modelo-->
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="text-base" for="Marca">Marca</label>
+                    <select id="Marca" class="form-control" name="Montadora">
+                        <option selected="selected" value="">Selecione...</option>
+                        @foreach (string marca in marcas)
+                        {
+                            <option value="@marca">@marca</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-base" for="Modelo">Modelo</label>
+                    <select id="Modelo" class="form-control" name="Modelo">
+                        <option selected="selected" value="">Selecione...</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Cor, Ano, KM e data da última revisão-->
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputCor">Cor</label>
+                    <input type="text" class="form-control" id="inputCor">
+                </div>
+                <div class="form-group col-md-1">
+                    <label for="inputAno">Ano</label>
+                    <input type="text" class="form-control" id="inputAno">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputKm">KM do veículo</label>
+                    <input type="text" class="form-control" id="inputKm">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputDataRevisao">Data da última revisão</label>
+                    <input class="form-control" type="date" id="inputDataRevisao">
+                </div>
+            </div>
+
+            <!-- Procedimentos realizados na última revisão-->
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Procedimentos realizados na última revisão</label>
+                    <div class="row show-grid">
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="ar">
+                                <input type="checkbox" id="ar" name="FiltroAr" value="true" /> Filtro de Ar
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="arComb">
+                                <input type="checkbox" id="filComb" name="FiltroCombustivel" value="true" /> Filtro de Combustível
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="arCond">
+                                <input type="checkbox" id="arCond" name="FiltroArCondicionado" /> Filtro Ar Condicionado
+                            </label>
+                        </div>
+
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="oleo">
+                                <input type="checkbox" id="oleo" name="FiltroOleo" /> Filtro de Óleo
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="velas">
+                                <input type="checkbox" id="velas" name="Velas" /> Velas
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="luzes">
+                                <input type="checkbox" id="luzes" name="Luzes" /> Luzes
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="freios">
+                                <input type="checkbox" id="freios" name="PastilhaFreio" /> Freios
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="amortecedor">
+                                <input type="checkbox" id="amortecedor" name="Amortecedor" /> Amortecedor
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="pneus">
+                                <input type="checkbox" id="pneus" name="Pneu" /> Pneus
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="correiaDentada">
+                                <input type="checkbox" id="correiaDentada" name="CorreiaDentada" /> Correia Dentada
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="alternador">
+                                <input type="checkbox" id="alternador" name="CorreiaAlternador" /> Correia do Alternador
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="motor">
+                                <input type="checkbox" id="motor" name="FluidoTransmissao" /> Fluído de Transmissão
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="alinhamento">
+                                <input type="checkbox" id="alinhamento" name="Alinhamento" /> Alinhamento
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="fluidoDire">
+                                <input type="checkbox" id="fluidoDire" name="FluidoDirecao" /> Fluído da Direção
+                            </label>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            <label for="fluidoOleo">
+                                <input type="checkbox" id="fluidoOleo" name="DiscoFreio" /> Disco de Freio
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Botão enviar-->
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <button type="button" id="cadVeiculo" class="btn btn-default bt-edit" onclick="cadastro()">Cadastrar</button>
+                </div>
+
+            </div>
+
+        </form>
+
+
+        <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
+        @*  *@
+    </div>
+    <div style="height: 90px;"></div>
+
+
+    <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+        document.getElementById("Marca").onchange = function () {
+            $.ajax({
+                url: "/veiculo/ObterModelos",
+                method: "get",
+                cache: false,
+                data: { marca: this.value },
+                success: function (dados) {
+                    var html = '<option selected="selected">Selecione...</option>';
+                    for (var i = 0; i < dados.length; i++) {
+                        html += '<option value="' + dados[i] + '">' + dados[i] + '</option>';
+                    }
+                    document.getElementById("Modelo").innerHTML = html;
+                },
+                error: function (x) {
+                    alert(x);
+                }
+            });
+        };
+
+        //$(function () {
+        //    $("#Marca").ready(function () {
+        //        $("Modelo").change(function () {
+        //            $("Modelo").html('<option value=""></option>');
+        //        var texto = $(this).val();
+
+        //        if (texto === "fiat") {
+        //            var option = document.createElement("option");
+        //            option.appendChild("Palio");
+        //        }
+         
+        
+        //        });
+        //    });
+        //});
+
+        $("#ar").click(function (e) {
+            if ($(this).is(':checked')) {
+                true;
+            } else {
+                false;
+            }
+
+        });
+
+        function cadastro() {
+            var cadastroVeiculo = {
+                carro : {
+                Montadora: $("#Marca").val(),
+                Modelo: $("#Modelo").val(),
+                Cor: $("#inputCor").val(),
+                Ano: $("#inputAno").val(),
+                Km: $("#inputKm").val()
+            },
+                revisoes: {
+                Data: $("#inputDataRevisao").val(),
+                FiltroAr: $("#ar").val(),
+                FiltroCombustivel: $("#filComb").val(),
+                FiltroArCondicionado: $("#arCond").val(),
+                FiltroOleo: $("#oleo").val(),
+                Velas: $("#velas").val(),
+                Luzes: $("#luzes").val(),
+                PastilhaFreio: $("#freios").val(),
+                Amortecedor: $("#amortecedor").val(),
+                Pneu: $("#pneus").val(),
+                CorreiaDentada: $("#correiaDentada").val(),
+                CorreiaAlternador: $("#motor").val(),
+                Alinhamento: $("#alinhamento").val(),
+                FluidoDirecao: $("#fluidoDIre").val(),
+                DiscoFreio: $("#fluidoOleo").val()
+            }
+        }
+
+        $.ajax({
+            url: "@Url.Action("CadastroNovoVeiculo", "Veiculo")",
+            cache: false,
+            method: "post",
+            datatype: "json",
+            data: cadastroVeiculo,
+            success: function (dados) {
+
+                alert("Sucesso");
+            },
+            error: function () {
+                alert("Houve um herro ao salvas os cadastros");
+            }
+        });
+    }
+
+    </script>
+}

@@ -1,0 +1,517 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--Detalhes Iniciais do projeto-->
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="i4 Tech Soluções">
+    <meta name="description" content="Diga qual é o seu problema, e nós diremos qual é a página do manual">
+    <meta name="keywords" content="É tudo muito fácil, após o cadastro, informe a fabricante do veículo, o modelo, o ano e a kilometragem. Pronto! Iremos mostrar as manutenções recomendadas e as que estão por vir com a Kilometragem atual, e se preferir pode fazer o download do seu manual de manutenção. " />
+    <meta property="og:url" content="http://mecanicovirtual.azurewebsites.net" />
+    <meta property="og:title" content="Mecânico Virtual | i4Tech Soluções" />
+    <meta property="og:description" content="É tudo muito fácil, após o cadastro, informe a fabricante do veículo, o modelo, o ano e a kilometragem. Pronto! Iremos mostrar as manutenções recomendadas e as que estão por vir com a Kilometragem atual, e se preferir pode fazer o download do seu manual de manutenção. " />
+    <meta property="og:image" content="http://mecanicovirtual.azurewebsites.net" />
+
+    <!--Ferramentas e Estilos CSS/ANIMATE/JQUERY-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel='stylesheet' href="assets/css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- icone da aba -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="36x36" href="/android-icon-36x36.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/android-icon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="72x72" href="/android-icon-72x72.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="144x144" href="/android-icon-144x144.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Mecânico Virtual</title>
+</head>
+<body>
+
+    <!--Barra superior fixa-->
+
+    <header id="header" class="navbar navbar-inverse navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Meu Logo -->
+                <a href="#inicio" class="navbar-brand">i4<span class="lighter">Tech</span></a>
+            </div>
+            <!-- NAVBAR Início da Navegação -->
+            <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#inicio">NOVA VERSÃO</a>
+                    </li>
+                    <li>
+                        <a href="#sobre">Sobre o projeto</a>
+                    </li>
+                    <li>
+                        <a href="#galeria">Galeria de Fabricantes</a>
+                    </li>
+                    <li>
+                        <a onclick="mostrarModalCriar()">Cadastre-se Agora!</a>
+                    </li>
+                    <li>
+                        <a onclick="mostrarModalLogin()">LOGIN</a>
+                    </li>
+                    <li>
+                        <a href="#faleconosco">Fale Conosco</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--INÍCIO(1ª página)-->
+    <section id="inicio" class="section" style="background-image:url(assets/img/video2.gif)">
+      
+        <div id="inicioConteudo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 wrapsection">
+                        <div class="herotext">
+                            <h1 class="animated fadeInDown" style="color:#eeb812">Mecânico Virtual </h1>
+                        </div>
+                        <!--CORROSEL-->
+                        <div>
+                            <div id="carousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicadores -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel" data-slide-to="1"></li>
+                                    <li data-target="#carousel" data-slide-to="2"></li>
+                                </ol>
+
+                                <!-- Conteúdo do Carrosel -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <blockquote>
+                                            <p class="lead">
+                                                Simples, e rápido. Tudo que o motorista necessita na palma da sua mão, com apenas alguns cliques.
+                                            </p>
+                                            <small>i4Tech</small>
+                                        </blockquote>
+                                    </div>
+                                    <div class="item">
+                                        <blockquote>
+                                            <p class="lead">
+                                                A Mecânico virtual, oferece até o manual de manutenção dos veículos com mais de 30 anos.
+                                            </p>
+                                            <small>i4Tech</small>
+                                        </blockquote>
+                                    </div>
+                                    <div class="item">
+                                        <blockquote>
+                                            <p class="lead">
+                                                Em breve em nosso acervo, manuais e dicas de manutenção de veículos Chineses com menos de 10 anos.
+                                            </p>
+                                            <small>i4Tech</small>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre O Projeto
+             ================================================== -->
+    <section id="sobre" class="section" style="background-image:url(assets/img/sobreclaro.jpg);">
+        <div class="wrapsection">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Titulo -->
+                        <div class="maintitle">
+                            <span style="color:black">
+                                <h3 class="section-title"><strong><span class="lighter">Diga qual é  o seu </span></strong> PROBLEMA,<span class="lighter"> e nós diremos qual é a página do manual</span></h3>
+                                <p class="lead">
+                                    É tudo muito fácil, após o cadastro, informe a fabricante do veículo, o modelo, o ano e a kilometragem. Pronto! Iremos mostrar as manutenções
+                                    recomendadas e as que estão por vir com a Kilometragem atual, e se preferir pode fazer o download do seu manual de manutenção.
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-box wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                            <img src="http://www.digitalschool.com.br/assets/images/body/centro-de-treinamento/training_digital_building.jpg" alt="">
+                            <h3>Agosto de 2017 <br />Digital Building</h3>
+                            <div class="text-left">
+                                <p>
+                                    Nossa sede está localizada em um prédio comercial,próxima a estação com um ecosistema universitário, facilitando o entendimento e a
+                                    flexibilidade para ajustar suas necessidades ao nosso grande banco de dados.
+                                </p>
+                                <p>
+                                    A força de vontade faz coisas incríveis.
+                                </p>
+                                <p class="text-center">
+                                    <button type="button" class="btn btn-info btn-md"><a href="#">Leia mais</a></button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-box wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                            <span class="glyphicon glyphicon-stats"></span>
+                            <h3>40 novos usuários por dia</h3>
+                            <p>
+                                Informações de veículos e práticidade nunca estiveram tão acessíveis.
+                            </p>
+                            <button type="button" class="btn btn-info btn-md"><a href="#">Leia mais</a></button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-box wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.2s">
+                            <span class="glyphicon glyphicon-tree-deciduous"></span>
+                            <h3>10 árvores</h3>
+                            <p>
+                                Esse é o número que conseguimos economizar de ser desmatada por dia.
+                            </p>
+                            <button type="button" class="btn btn-info btn-md"><a href="#">Leia mais</a></button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-box wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.3s">
+                            <span class="glyphicon glyphicon-heart"></span>
+                            <h3>15 parceiros</h3>
+                            <p>
+                                Iniciativas privadas e até públicas, fazendo parceira com a Mecanico virtual.
+                            </p>
+                            <button type="button" class="btn btn-info btn-md"><a href="#">Leia mais</a></button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-box wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.4s">
+                            <span class="glyphicon glyphicon-usd"></span>
+                            <h3>R$ 800,00 em média</h3>
+                            <p>
+                                Valor economizado por pessoa, com acesso ao serviço Mecanico Virutal.
+                            </p>
+                            <button type="button" class="btn btn-info btn-md"><a href="#">Leia mais</a></button>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <button href="cadastro.html" class="btn btn-default btn-lg efeitoanime wow animated slideInLeft" type="button"style="color:black" onclick="mostrarModalCriar()">Cadastre-se Agora!</button>
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Galeria
+       ================================================== -->
+    <section id="galeria" class="section" style="background-image: url(http://themepush.com/demo/runcharity/assets/img/map.png)">
+        <div class="wrapsection" style="background-color:#282525;opacity:0.9">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 sol-sm-12">
+                        <div class="maintitle ">
+
+                            <span style="color:black">
+                                <h3 class="section-title" style="color:#eeb812"><b> Galeria de fabricantes cadastradas</b></h3>
+
+                                <p class="lead wow animated flipInX" style="color:#eeb812" data-wow-duration="2s" data-wow-delay="0.5s">
+                                    Um grande acervo, para atender até o motorista mais exigente. E sabe o que é melhor? Tudo isso de graça :-)
+                                </p>
+
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <a href="http://www.toyota.com.br/servicos/pecas-genuinas/" target="_blank" title="This is the description">
+                            <img src="assets/img/toyotahonda.jpg" alt="" class="image-responsive">
+                            <div class="description">
+                                <span class="caption">Time <b> Toyota   </b></span>
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <a href="http://www.vw.com.br/pt/servicos/pecas-originais.html" target="_blank" title="This is the description">
+                            <img src="assets/img/vw.jpg" alt="" class="image-responsive">
+                            <div class="description">
+                                <span class="caption">Time <b>Volks</b></span>
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <a href="https://www.pecachevrolet.com.br/?gclid=Cj0KCQjwvabPBRD5ARIsAIwFXBmq0fyQCxYgWaC9e_d7R0e7g0lOhhK1KmBYjbsmuB2IeC9_QVpyC8QaAocwEALw_wcB#" target="_blank" title="This is the description">
+                            <img src="assets/img/gm.jpg" alt="" class="image-responsive">
+                            <div class="description">
+                                <span class="caption">Time <b>GM</b></span>
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <a href="http://www.citroen.com.br/servicos-e-pecas.html" target="_blank" title="This is the description">
+                            <img src="assets/img/psa.jpg" alt="" class="image-responsive">
+                            <div class="description">
+                                <span class="caption">Time <b>PSA</b></span>
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <a href="https://www.renault.com.br/servicos/para-o-seu-renault/pecas-e-servicos.html" target="_blank" title="This is the description">
+                            <img src="assets/img/renautnissan.jpg" alt="" class="image-responsive">
+                            <div class="description">
+                                <span class="caption">Time <b>Renaut</b></span>
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <a href="http://www.fiat.com.br/servicos/pecas-genuinas.html" target="_blank" title="This is the description">
+                            <img src="assets/img/fca.jpg" alt="" class="image-responsive">
+                            <div class="description">
+                                <span class="caption">Time <b>FCA</b></span>
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="efeitoanime">
+                    <button class="btn btn-default btn-lg wow animated bounceInLeft" role="button" style="color:#eeb812" onclick="mostrarModalCriar()"><b>Cadastre-se Agora! </b></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sobre O Projeto Part 2
+        ================================================== -->
+    <section id="sobre" class="section" style="background-image: url(assets/img/sobremeio.jpg);">
+        <div class="wrapsection" style="background-color: #eeb812;opacity:0.7;">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 sol-sm-12">
+                        <div class="maintitle">
+                            <span style="color:black">
+                                <h3 class="section-title justtitle">Missão</h3>
+                                <p class="lead bottom0 wow animated bounceInUp" data-wow-duration="1.5s" data-wow-delay="0.5s">
+                                    Arquivar o maior número possível de carros nacionais com menos de 30 anos.
+                                </p>
+                                <h3 class="section-title justtitle">Visão</h3>
+                                <p class="lead bottom0  wow animated bounceInUp" data-wow-duration="1.5s" data-wow-delay="0.5s">
+                                    Apoiar motoristas e mecânicos, desde o iniciante, ao mais experiente.
+                                </p>
+                                
+                                <h3 class="section-title justtitle">Valores</h3>
+                                <p class="lead bottom0 wow animated bounceInUp" data-wow-duration="1.5s" data-wow-delay="0.5s">
+                                    Proteção do meio ambiente, reduzir gastos e tempo com impressão de manuais.
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                </p>
+                <button href="cadastro.html" class="btn btn-default btn-lg efeitoanime wow animated slideInLeft" role="button" style="color:black"onclick="mostrarModalCriar()"><b>Cadastre-se Agora! </b></button>
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Fale conosco ================================================== -->
+    <section id="faleconosco" class="parallax section" style="background-image: url(assets/img/fale.jpg);">
+        <div class="wrapsection">
+            <div class="parallax-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="maintitle">
+                            <span style="color:#eeb812">
+                                <h3 class="section-title">Fale Conosco</h3>
+                                <p class="lead">
+                                    Para dúvidas, reclamações ou sugestões aqui é o lugar certo :-)
+                                </p>
+                            </span>
+                        </div>
+                        <form id="contact" name="contact" method="post" class="text-left">
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-md-4 wow fadeIn animated" data-wow-delay="0.3s" data-wow-duration="3s">
+                                        <span style="color:#eeb812">
+                                            <label for="name"><b>Nome</b><span class="required">*</span></label>
+                                            <input type="text" name="name" id="name" size="20" value="" required />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-md-4 wow fadeIn animated" data-wow-delay="0.3s" data-wow-duration="3s">
+                                        <span style="color:#eeb812">
+                                            <label for="email"><b>Email</b><span class="required">*</span></label>
+                                            <input type="text" name="email" id="email" size="30" value="" required />
+                                        </span>
+                                    </div>
+                                    <div class="col-md-4 wow fadeIn animated" data-wow-delay="0.3s" data-wow-duration="3s">
+                                        <span style="color:#eeb812">
+                                            <label for="phone"><b>Telefone</b></label>
+                                            <input type="text" name="phone" id="phone" size="12" value="" />
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="wow fadeIn animated" data-wow-delay="0.3s" data-wow-duration="3s" style="margin-top:15px;">
+                                    <span style="color:#eeb812">
+                                        <label for="car"><b>Carro e modelo</b><span class="required">*</span></label>
+                                        <input type="text" name="car" id="car" size="30" value=""></>
+                                    </span>
+                                </div>
+                                <div class="wow fadeIn animated" data-wow-delay="0.3s" data-wow-duration="3s" style="margin-top:15px;">
+                                    <span style="color:#eeb812">
+                                        <label for="message2"><b>Mensagem</b><span class="required">*</span></label>
+                                        <textarea name="message" id="message" size="20" required></textarea>
+                                    </span>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div class="wow fadeIn animated" data-wow-delay="0.3s" data-wow-duration="1.5s">
+                            <span style="color:#eeb812">
+                                <input id="submit" type="submit" name="submit" value=Enviar />
+                            </span>
+                        </div>
+                    </div>
+                    <div id="success">
+                        <p class="contactalert">
+                            Sua Mensaegm foi enviada com sucesso! Em breve iremos entrar em contado. Obrigado!
+                        </p>
+                    </div>
+                    <div id="error">
+                        <p class="contactalert">
+                            Não foi possível enviar sua mensagem, atualize a página e tente novamente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div id="vao"></div>
+    </section>
+    <!--Login oculto
+        ================================================== -->
+    <!-- Creditos
+    =============================================== -->
+    <section id="creditos" class="text-center">
+        <span class="social wow zoomIn">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-skype"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+        </span><br />
+        <span style="color:#282525">
+            Desenvolvido por
+            <br><b>I4Tech &copy;</b>
+            <br><b> 2018</b>
+        </span>
+    </section>
+
+    <!-- Bootstrap / JavaScript
+      ================================================== -->
+    <!-- Colocado no final do documento para que as páginas sejam carregadas mais rapidamente  -->
+
+    <script type="text/javascript">document.addEventListener('DOMContentLoaded', function () { var JSLink = location.protocol + '//widget.omnize.com', JSElement = document.createElement('script'); JSElement.async = !0; JSElement.charset = 'UTF-8'; JSElement.src = JSLink; JSElement.onload = OnceLoaded; document.getElementsByTagName('body')[0].appendChild(JSElement); function OnceLoaded() { wOmz.init({ id: 8260 }); } }, false);</script>
+    <!-- Fim do script -->
+    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript">
+        function ajustarInicio() {
+            $("#inicio").height($("#inicioConteudo").height());
+        }
+        ajustarInicio();
+        $(window).resize(ajustarInicio);
+    </script>
+
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/common.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.localScroll.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/js/validate.js"></script>
+
+    <script type="text/javascript">
+
+        function mostrarModalCriar() {
+
+            $.ajax({
+                url: "@Url.Action("ModalCadastro","Front")",
+                cache: false,
+                success: function (dados) {
+                    $("#vao").html(dados);
+
+                    $("#modalCriar").modal();
+                },
+                error: function () {
+                    alert("Erro");
+                }
+            });
+
+        }
+
+        function mostrarModalLogin() {
+
+            $.ajax({
+                url: "@Url.Action("ModalAcesso","Front")",
+                cache: false,
+                success: function (dados) {
+                    $("#vao").html(dados);
+
+                    $("#modalLogin").modal();
+                },
+                error: function () {
+                    alert("Erro");
+                }
+            });
+
+        }
+
+
+       
+    </script>
+
+</body>
+</html>

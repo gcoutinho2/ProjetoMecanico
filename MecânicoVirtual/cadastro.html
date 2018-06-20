@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--Detalhes Iniciais do projeto-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="i4 Tech Soluções">
+    <meta name="description" content="Diga qual é o seu problema, e nós diremos qual é a página do manual">
+    <meta name="keywords" content="É tudo muito fácil, após o cadastro, informe a fabricante do veículo, o modelo, o ano e a kilometragem. Pronto! Iremos mostrar as manutenções recomendadas e as que estão por vir com a Kilometragem atual, e se preferir pode fazer o download do seu manual de manutenção. " />
+    <meta property="og:url" content="http://mecanicovirtual.azurewebsites.net" />
+    <meta property="og:title" content="Mecânico Virtual | i4Tech Soluções" />
+    <meta property="og:description" content="É tudo muito fácil, após o cadastro, informe a fabricante do veículo, o modelo, o ano e a kilometragem. Pronto! Iremos mostrar as manutenções recomendadas e as que estão por vir com a Kilometragem atual, e se preferir pode fazer o download do seu manual de manutenção. " />
+    <meta property="og:image" content="http://mecanicovirtual.azurewebsites.net" />
+
+    <!--Ferramentas e Estilos CSS/ANIMATE/JQUERY-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel='stylesheet' href="assets/css/cadastro.css">
+    <link rel='stylesheet' href="assets/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- icone da aba -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="36x36" href="/android-icon-36x36.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/android-icon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="72x72" href="/android-icon-72x72.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="144x144" href="/android-icon-144x144.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Mecânico Virtual</title>
+</head>
+<body>
+    <div id="parallax">
+    </div>
+    <!--Barra superior fixa-->
+
+    <header id="header" class="navbar navbar-inverse navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Meu Logo -->
+                <a href="index.html" class="navbar-brand">i4<span class="lighter">Tech</span></a>
+            </div>
+            <!-- NAVBAR Início da Navegação -->
+            <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Início</a>
+                    </li>
+                    <li>
+                        <a href="#login-modal" data-toggle="modal">LOGIN</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CADASTRO-->
+    <div id="pai" class="container col-md-12">
+        <div id="vao"></div>
+        <div class="containcadastro"></div>
+        <div class="container col-md-4"></div>
+        <div class="container col-md-6">
+            <div class=" text-left ">
+                <div class="search-box">
+                    <div class="caption">
+                        <h3> <b>O Cadastro é rápido e fácil</b></h3>
+                    </div>
+                    <form id="formCriar" class="loginForm" method="post">
+                        <div class="input-group">
+
+                            <h1 class="lead animated flipInX">Digite seu e-mail</h1>
+                            <input type="email" id="Email" class="input-lg form-control" placeholder="E-mail">
+                            <br /><br /><br />
+
+                            <h1 class="lead animated flipInX">Digite um nome de usuário</h1>
+                            <input type="text" id="Usuario1" class="input-lg form-control" placeholder="Usuário">
+                            <br /><br /><br />
+
+                            <h1 class="lead animated flipInX">Digite uma senha</h1>
+                            <input type="password" class="input-lg form-control" name="password1" id="password1" placeholder="Senha" autocomplete="off">
+                            <div class="row">
+
+                                <div class="col-sm-6">
+                                    <span id="8char" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> 8 Caracteres<br>
+                                    <span id="ucase" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Uma letra em caixa alta
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <span id="lcase" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Uma letra<br>
+                                    <span id="num" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Um número
+                                </div>
+                            </div>
+                            <input type="password" class="input-lg form-control" name="password2" id="Senha" placeholder="Repita a senha" autocomplete="off">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <span id="pwmatch" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Senha igual
+                                </div>
+                            </div>
+                            <button class="btn btn-success" type="button" onclick="mostrarModalCriar()">Novo Usuário</button>
+                            <input type="submit" class="col-xs-12 btn btn-primary btn-load btn-lg" data-loading-text="Changing Password..." value="Validar Cadastro">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Login oculto
+       ================================================== -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-image: url(assets/img/login.jpg)">
+                <div class="modal-header" align="center">
+                    <img class="img-circle" id="img_logo">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <!-- Início da Forma maior -->
+                <div id="div-forms">
+                    <!-- Incío da Forma do Login -->
+                    <form id="login-form">
+                        <div class="modal-body ">
+                            <div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg"><b>Digite seu email e senha.</b></span>
+                            </div>
+                            <input id="login_email" class="loginmargin form-control" type="email" placeholder="Digite um email válido" required>
+                            <input id="login_password" class="loginmargin form-control" type="password" placeholder="Senha" required>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> <b>Lembrar da próxima vez</b>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Acessar</button>
+                            </div>
+                            <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link" style="color:#eeb812">Esqueceu a senha?</button>
+
+                            </div>
+                        </div>
+                        <!-- Fim da Forma do Login -->
+                    </form>
+                    <!-- Fim da Forma do Login -->
+                </div>
+            </div>
+            <!--Fim da classe Login oculto-->
+        </div>
+
+
+
+        <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/cadastro.js"></script>
+        <script type="text/javascript">
+            $("#formCriar").validate({
+                rules: {
+                    Nome: {
+                        required: true,
+                        minlength: 5,
+                        maxlength: 50
+                    },
+
+                    Email: {
+                        required: true,
+                        email: true,
+                        maxlength: 50
+                    },
+                    Usuario1: {
+                        required: true,
+                        Usuario1: true,
+                        maxlength: 35
+                    },
+
+                    Senha: {
+                        required: true,
+                        Senha: true,
+                        minlength: 8,
+                        maxlength: 20
+                    },
+
+                },
+
+                submitHandler: function (form) {
+                    $.ajax({
+                        url: "/Usuario/CriarUsuario",
+                        method: "POST",
+                        datatype: "json",
+                        data: new FormData(document.getElementById("formCriar")),
+                        contentType: false,
+                        processData: false,
+                        success: function (dados) {
+                            if (dados == "ok") {
+                                $('#modalCriar').modal('toggle');
+                                $.ajax({
+                                    method: "GET", //GET OU POST
+                                    cache: false,
+                                    url: "/Usuario/Index", //LOCAL DO ARQUIVO
+                                    success: function (answer) {
+                                        $('#pai').html(answer);//Executa se tiver sucesso
+                                    },
+                                    error: function (jqXHR, textStatus) {
+                                        console.log("Erro: " + textStatus); //executa se falhar
+                                    }
+                                });
+
+
+                            } else {
+                                alert("Erro: " + dados);
+                            }
+                        },
+                        error: function () {
+                            alert("Erro");
+                        }
+                    });
+                }
+            });
+
+
+        </script>
+
+</body>
+</html>

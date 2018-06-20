@@ -1,0 +1,84 @@
+﻿@model  MecanicoVirtual.Models.Usuario
+
+<div id="modalCriar" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <form id="formCriar">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Criar Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="txtNome">Nome</label>
+                        <input type="text" class="form-control" name="Nome" id="txtNome" placeholder="Nome" />
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">E-mail</label>
+                        <input type="email" class="form-control" name="Email" id="txtEmail" placeholder="E-mail" />
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">Usuario</label>
+                        <input type="text" class="form-control" name="Login" id="txtLogin" placeholder="Usuario" />
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">Senha</label>
+                        <input type="password" class="form-control" name="Senha" id="txtSenha" placeholder="Senha" />
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Criar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#formCriar").validate({
+        rules: {
+            Nome: {
+                required: true,
+                minlength: 5,
+                maxlength: 50
+            },
+
+            Email: {
+                required: true,
+                email: true
+            },
+            Login: {
+                required: true
+            },
+            Senha: {
+                required: true
+            }
+        },
+
+        submitHandler: function (form) {
+            var usuario = {
+                Nome: $("#txtNome").val(),
+                Email: $("#txtEmail").val(),
+                Login: $("#txtLogin").val(),
+                Senha: $("#txtSenha").val()
+            }
+
+            $.ajax({
+                url: "@Url.Action("Criar","Usuario")",
+                method: "POST",
+                data: usuario,
+                success: function (dados) {
+                    $("#modalCriar").modal('hide');
+
+                    alert("Usuario cadastrado com sucesso");
+                },
+                error: function () {
+                    alert("Erro");
+                }
+            });
+        }
+    });
+
+
+</script>

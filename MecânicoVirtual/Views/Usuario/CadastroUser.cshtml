@@ -1,0 +1,122 @@
+﻿@{
+    Layout = "~/Views/Shared/_Mestre.cshtml";
+}
+@section Corpo {
+
+    <div class="container-fluid">
+
+        <h1>Cadastro Funcionário</h1>
+        <hr>
+
+        <form id="criarUsuario">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputNome">Nome Funcionário</label>
+                    <input type="text" class="form-control" id="inputNome" placeholder="Nome" name="Nome">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="inputEmailUser">Email</label>
+                    <input type="email" class="form-control" id="inputEmailUser" placeholder="Email" name="Email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+
+                    <label for="inputUser">Usuário</label>
+                    <input type="text" class="form-control" id="inputUser" placeholder="Usuário" name="Login">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-base" for="tipoAcesso">Tipo de Acesso</label>
+                    <select id="tipoAcesso" class="form-control" name="TipoAcesso">
+                        <option selected="selected" value="">Selecione...</option>
+                        <option value="admin">Administrador</option>
+                        <option value="padrao">Padrão</option>
+                        <option value="contribuidor">Contribuidor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputSenha">Senha</label>
+                    <input type="password" class="form-control" id="inputSenha" placeholder="Senha" name="Senha">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputSenha2">Confirme a Senha</label>
+                    <input type="password" class="form-control" id="inputSenha2" placeholder="Repita a Senha" name="Senha2">
+                </div>
+                <div id="SenhaErrada"></div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <button class="btn" type="submit"> Criar Usuario</button>
+                </div>
+            </div>
+
+
+        </form>
+
+        <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
+
+    </div>
+    <div style="height: 191px;"></div>
+
+    <script type="text/javascript" src="~/assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+        $("#criarUsuario").validate({
+        rules: {
+            Nome: {
+                required: true,
+                minlength: 3
+            },
+            Email: {
+                required: true,
+                email: true
+            },
+            Login: {
+                required: true
+            },
+            TipoAcesso: {
+                required: true
+            },
+            Senha: {
+                required: true
+            },
+            Senha2: {
+                required: true
+            }
+        },
+
+        submitHandler: function (form) {
+
+            if ($("#inputSenha").val() != $("#inputSenha2").val()) {
+                alert("Senha Errada");
+            }
+            var usuario = {
+                Nome: $("#inputNome").val(),
+                Email: $("#inputEmailUser").val(),
+                Usuario: $("#inputUser").val(),
+                TipoAcesso: $("#tipoAcesso").val(),
+                Senha: $("#inputSenha").val(),
+            };
+
+            $.ajax({
+                url: "@Url.Action("InsereFuncionario", "Usuario")",
+                cache: false,
+                method: "post",
+                datatype: "json",
+                data: usuario,
+                success: function (dados) {
+                    alert("Cadastrado");
+                },
+                error: function () {
+                    alert("Erro");
+                }
+            });
+        }
+    });
+    </script>
+}
