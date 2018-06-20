@@ -4,48 +4,72 @@
 }
 
 @section Corpo {
+
     <div class="container-fluid">
         <h1>Informe seu problema</h1>
         <hr>
-        <div class="form-group">
-            <label>Digite o assunto do problema</label>
-            <input class="form-control" placeholder="">
-        </div>
-        <div class="form-group">
-            <label>Descreva o problema</label>
-            <textarea class="form-control" placeholder="" rows="3"></textarea>
-        </div>
-
-
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Enviar Informações</button>
-
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Dados Enviados</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                    </div>
-                    <div class="modal-body">
-                        <p>Obrigado por compartilhar conosco o seu problema, o mais breve possível entraremos em contato.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
-                    </div>
-
-
-
-
-                </div>
+        <form id="enviarMsg">
+            <div class="form-group">
+                <label>Digite o assunto do problema</label>
+                <input id="inputAssunto" name="Assunto" class="form-control" placeholder="">
             </div>
-        </div>
+            <div class="form-group">
+                <label>Descreva o problema</label>
+                <textarea id="inputMsg" name="Descricao" class="form-control" placeholder="" rows="3"></textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-lg btn-primary btn-block btn-signin">Enviar Informações</button>
+        </form>
+
+
+        <button type="button" class="btn btn-lg btn-primary btn-block btn-signin" data-toggle="modal" data-target="#myModal">Enviar Informações</button>
+
+
         <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
         <div style="height: 240px;"></div>
     </div>
+    <script type="text/javascript" src="~/assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+        $("#enviarMsg").validate({
+        rules: {
+            Assunto: {
+                required: true,
+                minlength: 5
+            },
 
+            Descricao: {
+                required: true,
+                minlength: 10
+            }
+            },
+              submitHandler: function (form) {
 
-}
+            var informacao = {
+                Assunto: $("#inputAssunto").val(),
+                Descricao: $("#inputMsg").val(),
+            };
+
+            $.ajax({
+                url: "@Url.Action("InsereMsg", "Mensagem")",
+                cache: false,
+                method: "post",
+                datatype: "json",
+                data: informacao,
+                success: function (dados) {
+                    alert("Mensagem enviada com sucesso!");
+                },
+                error: function () {
+                    alert("Erro");
+                }
+            });
+
+        }
+    });
+
+    </script>
+
+    }
 

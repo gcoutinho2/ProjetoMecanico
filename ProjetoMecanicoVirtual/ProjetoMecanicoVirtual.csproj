@@ -199,10 +199,12 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="DAO\FuncionarioDAO.cs" />
+    <Compile Include="DAO\MensagemDAO.cs" />
     <Compile Include="Models\Acesso.cs" />
     <Compile Include="Models\Carro.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\Mensagem.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\MensagemController.cs" />
@@ -279,7 +281,6 @@
     <Content Include="Views\Usuario\CadastroUser.cshtml" />
     <Content Include="Views\Shared\_Mestre.cshtml" />
     <Content Include="assets\vendor\jquery\jquery-3.3.1.min.map" />
-    <Content Include="Views\Usuario\_Gerencia.cshtml" />
     <Content Include="Views\Usuario\_ModalGerencia.cshtml" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfont.ttf" />
