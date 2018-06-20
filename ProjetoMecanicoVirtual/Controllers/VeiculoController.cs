@@ -46,10 +46,16 @@ namespace ProjetoMecanicoVirtual.Controllers
             switch (marca)
             {
                 case "FIAT":
-                    modelos = new List<string>() { "MA", "MB" };
+                    modelos = new List<string>() { "PALIO", "MAREA", "PUNTO", "SIENA", "UNO" };
+                    break;
+                case "VOLKSWAGEN":
+                    modelos = new List<string>() { "GOL", "SAVEIRO", "FUSCA", "JETTA", "PASSAT" };
+                    break;
+                case "FORD":
+                    modelos = new List<string>() { "FUSION", "FOCUS", "FIESTA", "KA", "ECOSPORT" };
                     break;
                 default:
-                    modelos = new List<string>() { "MC", "MD" };
+                    modelos = new List<string>() { "CELTA", "CORSA", "CRUZE", "COBALT", "ASTRA" };
                     break;
             }
 
