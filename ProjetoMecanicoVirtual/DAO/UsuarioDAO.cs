@@ -31,7 +31,7 @@ namespace ProjetoMecanicoVirtual.DAO
         {
             using (SqlConnection conn = Conexao.AbrirConexao())
             {
-                using (SqlCommand cmd = new SqlCommand(@"Update Usuario  set nome = @nome, Sobrenome = @sobrenome,
+                using (SqlCommand cmd = new SqlCommand(@"Update CLIENTE  set nome = @nome, Sobrenome = @sobrenome,
                                                        rg= @rg, data_nasc = @data_nasc , email_alternativo = @email_alternativo,
                                                         sexo = @sexo where id = @id " , conn))
                 {
